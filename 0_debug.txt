@@ -1,0 +1,729 @@
+0_vanilla.cpp: In function ‘int main()’:
+0_vanilla.cpp:131:15: error: no match for ‘operator<<’ (operand types are ‘std::ostream’ {aka ‘std::basic_ostream<char>’} and ‘const GF2<285, 2>::FieldElement’)
+     std::cout << x*y << std::endl;
+     ~~~~~~~~~~^~~~~~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:108:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+/usr/include/c++/8/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]’
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:117:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+/usr/include/c++/8/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:127:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/8/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:166:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long int’
+/usr/include/c++/8/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:170:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long unsigned int’
+/usr/include/c++/8/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(bool __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:174:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘bool’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:181:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short unsigned int’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:192:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘unsigned int’
+/usr/include/c++/8/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:201:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long int’
+/usr/include/c++/8/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:205:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long unsigned int’
+/usr/include/c++/8/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:220:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘double’
+/usr/include/c++/8/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(float __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:224:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘float’
+/usr/include/c++/8/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:232:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long double’
+/usr/include/c++/8/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(const void* __p)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:245:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘const void*’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+0_vanilla.cpp:114:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const GF2<genpoly, gen>&)’
+ ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
+          ^~~~~~~~
+0_vanilla.cpp:114:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const GF2<genpoly, gen>’
+     std::cout << x*y << std::endl;
+                    ^
+0_vanilla.cpp:122:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const typename GF2<genpoly, gen>::FieldElement&)’
+ ostream& operator<<(ostream& out,const typename GF2<genpoly,gen>::FieldElement& x){
+          ^~~~~~~~
+0_vanilla.cpp:122:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   couldn't deduce template parameter ‘genpoly’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/basic_string.h:48,
+                 from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/string_view:545:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/string_view:545:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   ‘GF2<285, 2>::FieldElement’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/basic_string.h:6323:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/bits/basic_string.h:6323:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/ios_base.h:46,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/system_error:217:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/8/system_error:217:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const std::error_code&’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:497:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:497:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘GF2<285, 2>::FieldElement’)
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:502:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:502:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:508:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)’
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:508:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:514:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)’
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:514:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘signed char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:519:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)’
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:519:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘unsigned char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:539:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:539:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:20: note:   mismatched types ‘const _CharT*’ and ‘GF2<285, 2>::FieldElement’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:321:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:556:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:556:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:569:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:569:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const signed char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:574:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:574:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:131:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const unsigned char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:682:5: note: candidate: ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)’
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:682:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/8/ostream: In substitution of ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = GF2<285, 2>::FieldElement]’:
+0_vanilla.cpp:131:20:   required from here
+/usr/include/c++/8/ostream:682:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+0_vanilla.cpp:133:15: error: no match for ‘operator<<’ (operand types are ‘std::ostream’ {aka ‘std::basic_ostream<char>’} and ‘const GF2<285, 2>::FieldElement’)
+     std::cout << x*y << std::endl;
+     ~~~~~~~~~~^~~~~~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:108:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+/usr/include/c++/8/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]’
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:117:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+/usr/include/c++/8/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:127:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/8/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:166:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long int’
+/usr/include/c++/8/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:170:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long unsigned int’
+/usr/include/c++/8/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(bool __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:174:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘bool’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:181:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short unsigned int’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:192:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘unsigned int’
+/usr/include/c++/8/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:201:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long int’
+/usr/include/c++/8/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:205:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long unsigned int’
+/usr/include/c++/8/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:220:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘double’
+/usr/include/c++/8/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(float __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:224:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘float’
+/usr/include/c++/8/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:232:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long double’
+/usr/include/c++/8/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(const void* __p)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:245:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘const void*’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+0_vanilla.cpp:114:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const GF2<genpoly, gen>&)’
+ ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
+          ^~~~~~~~
+0_vanilla.cpp:114:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const GF2<genpoly, gen>’
+     std::cout << x*y << std::endl;
+                    ^
+0_vanilla.cpp:122:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const typename GF2<genpoly, gen>::FieldElement&)’
+ ostream& operator<<(ostream& out,const typename GF2<genpoly,gen>::FieldElement& x){
+          ^~~~~~~~
+0_vanilla.cpp:122:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   couldn't deduce template parameter ‘genpoly’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/basic_string.h:48,
+                 from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/string_view:545:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/string_view:545:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   ‘GF2<285, 2>::FieldElement’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/basic_string.h:6323:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/bits/basic_string.h:6323:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/ios_base.h:46,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/system_error:217:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/8/system_error:217:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const std::error_code&’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:497:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:497:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘GF2<285, 2>::FieldElement’)
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:502:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:502:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:508:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)’
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:508:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:514:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)’
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:514:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘signed char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:519:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)’
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:519:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘unsigned char’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:539:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:539:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:20: note:   mismatched types ‘const _CharT*’ and ‘GF2<285, 2>::FieldElement’
+     std::cout << x*y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:321:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:556:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:556:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:569:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:569:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const signed char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:574:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:574:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:133:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const unsigned char*’
+     std::cout << x*y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:682:5: note: candidate: ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)’
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:682:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/8/ostream: In substitution of ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = GF2<285, 2>::FieldElement]’:
+0_vanilla.cpp:133:20:   required from here
+/usr/include/c++/8/ostream:682:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+0_vanilla.cpp:135:15: error: no match for ‘operator<<’ (operand types are ‘std::ostream’ {aka ‘std::basic_ostream<char>’} and ‘const GF2<285, 2>::FieldElement’)
+     std::cout << x*y << x << y << std::endl;
+     ~~~~~~~~~~^~~~~~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:108:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+/usr/include/c++/8/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]’
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:117:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+/usr/include/c++/8/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/usr/include/c++/8/ostream:127:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/8/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:166:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long int’
+/usr/include/c++/8/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:170:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long unsigned int’
+/usr/include/c++/8/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(bool __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:174:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘bool’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:181:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘short unsigned int’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘int’
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:192:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘unsigned int’
+/usr/include/c++/8/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:201:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long int’
+/usr/include/c++/8/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:205:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long long unsigned int’
+/usr/include/c++/8/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:220:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘double’
+/usr/include/c++/8/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(float __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:224:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘float’
+/usr/include/c++/8/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(long double __f)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:232:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘long double’
+/usr/include/c++/8/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+       operator<<(const void* __p)
+       ^~~~~~~~
+/usr/include/c++/8/ostream:245:7: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘const void*’
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]’
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘const GF2<285, 2>::FieldElement’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+0_vanilla.cpp:114:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const GF2<genpoly, gen>&)’
+ ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
+          ^~~~~~~~
+0_vanilla.cpp:114:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const GF2<genpoly, gen>’
+     std::cout << x*y << x << y << std::endl;
+                    ^
+0_vanilla.cpp:122:10: note: candidate: ‘template<unsigned int genpoly, unsigned int gen> std::ostream& operator<<(std::ostream&, const typename GF2<genpoly, gen>::FieldElement&)’
+ ostream& operator<<(ostream& out,const typename GF2<genpoly,gen>::FieldElement& x){
+          ^~~~~~~~
+0_vanilla.cpp:122:10: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   couldn't deduce template parameter ‘genpoly’
+     std::cout << x*y << x << y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/basic_string.h:48,
+                 from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/string_view:545:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/string_view:545:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   ‘GF2<285, 2>::FieldElement’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+     std::cout << x*y << x << y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/string:52,
+                 from /usr/include/c++/8/bits/locale_classes.h:40,
+                 from /usr/include/c++/8/bits/ios_base.h:41,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/basic_string.h:6323:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/8/bits/basic_string.h:6323:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   ‘const GF2<285, 2>::FieldElement’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+     std::cout << x*y << x << y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/bits/ios_base.h:46,
+                 from /usr/include/c++/8/ios:42,
+                 from /usr/include/c++/8/ostream:38,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/system_error:217:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)’
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/8/system_error:217:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const std::error_code&’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:497:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:497:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘GF2<285, 2>::FieldElement’)
+     std::cout << x*y << x << y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:502:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:502:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:508:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)’
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:508:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘char’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:514:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)’
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:514:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘signed char’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:519:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)’
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:519:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘unsigned char’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:539:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:539:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:20: note:   mismatched types ‘const _CharT*’ and ‘GF2<285, 2>::FieldElement’
+     std::cout << x*y << x << y << std::endl;
+                    ^
+In file included from /usr/include/c++/8/ostream:693,
+                 from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/bits/ostream.tcc:321:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)’
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:556:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:556:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const char*’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:569:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:569:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const signed char*’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:574:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)’
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:574:5: note:   template argument deduction/substitution failed:
+0_vanilla.cpp:135:19: note:   cannot convert ‘x.GF2<285, 2>::FieldElement::operator*(y)’ (type ‘const GF2<285, 2>::FieldElement’) to type ‘const unsigned char*’
+     std::cout << x*y << x << y << std::endl;
+                  ~^~
+In file included from /usr/include/c++/8/iostream:39,
+                 from 0_vanilla.cpp:1:
+/usr/include/c++/8/ostream:682:5: note: candidate: ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)’
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/8/ostream:682:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/8/ostream: In substitution of ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = GF2<285, 2>::FieldElement]’:
+0_vanilla.cpp:135:20:   required from here
+/usr/include/c++/8/ostream:682:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+0_vanilla.cpp: In instantiation of ‘GF2<GeneratingPolynomial, generator>::FieldElement& GF2<GeneratingPolynomial, generator>::FieldElement::operator/=(const GF2<GeneratingPolynomial, generator>::FieldElement&) [with unsigned int GeneratingPolynomial = 285; unsigned int generator = 2]’:
+0_vanilla.cpp:134:8:   required from here
+0_vanilla.cpp:65:45: error: cannot bind non-const lvalue reference of type ‘GF2<285, 2>::FieldElement&’ to an rvalue of type ‘GF2<285, 2>::FieldElement’
+             if(rep==0) return FieldElement(0);
+                                             ^
