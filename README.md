@@ -1,5 +1,5 @@
 # many-gf2n-cpp
-Various implementations of GF(2^n), done in c++17. Intended to be a practice.
+Various implementations of GF(2^n), done in c++17. Intended as a practice (or something similar to a lab session)
 
 ## Objective
 
