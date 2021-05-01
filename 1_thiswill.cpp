@@ -48,7 +48,7 @@ constexpr Rep slowMult(Rep a,Rep b){
 
 template<Rep genpoly,Rep gen>
 constexpr array<Rep,DegTerm<genpoly>::num> makeExpTable(){
-    constexpr Rep order = DegTerm<genpoly>::num-1;
+    constexpr Rep order = DegTerm<genpoly>::num - 1;
     Rep a = 1u;
     array<Rep,DegTerm<genpoly>::num> ret{0};
     for(int i=0;i<order;++i){
@@ -64,7 +64,7 @@ constexpr array<int,DegTerm<genpoly>::num> makeLogTable(){
     Rep a = 1;
     array<int,DegTerm<genpoly>::num> ret{0};
     for(int i=0;i<order;++i){
-        ret[a] = i;
+        ret[a] = i; // question: why isn't potential out-of-bounds access caught here?
         a = slowMult<genpoly>(a,gen);
     }
     return ret;
@@ -73,6 +73,7 @@ constexpr array<int,DegTerm<genpoly>::num> makeLogTable(){
 template<Rep GeneratingPolynomial,Rep generator>
 class GF2{
     static_assert(GeneratingPolynomial<0x00020000);
+    static_assert(generator>0);
     private:
     static constexpr Rep gen = generator;
     static constexpr Rep genpoly = GeneratingPolynomial;
@@ -83,17 +84,18 @@ class GF2{
     static constexpr array<Rep,DegTerm<genpoly>::num> gf_exp = makeExpTable<genpoly,gen>() ;
     static constexpr array<int,DegTerm<genpoly>::num> gf_log = makeLogTable<genpoly,gen>() ;
     Rep rep;
+    static_assert(generator < degreeTerm);
     //=======================NONSTATIC==========================
     public:
     GF2(Rep __rep=0): rep{__rep} {}
     const GF2 operator+(const GF2& other) const{
         return GF2(rep^other.rep);
     }
-    const GF2 operator-(const GF2& other) const{
-        return GF2(rep^other.rep);
+    inline const GF2 operator-(const GF2& other) const{
+        return rep + other;
     }
-    const GF2 operator^(const GF2& other) const{
-        return GF2(rep^other.rep);
+    inline const GF2 operator^(const GF2& other) const{
+        return rep + other;
     }
     const GF2 operator-() const{
         return GF2(rep);
@@ -133,6 +135,7 @@ class GF2{
         out << ss.str();
     }
 };
+
 
 template<Rep genpoly,Rep gen>
 ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
