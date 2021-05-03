@@ -13,15 +13,16 @@ constexpr Rep calculateDegree(Rep arg){
     for(;arg;arg>>=1) ++ret;
     return ret-1;
 }
-//workaround to enable degree term calculation in template parameters/
-template<Rep N>
-struct DegTerm{
-    constexpr static size_t num = 1 << calculateDegree(N);
-};
+
 template<Rep genpoly>
+struct DegTerm{
+    constexpr static size_t num = 1 << calculateDegree(genpoly);
+};
+
+template <Rep genpoly>
 constexpr Rep slowMult(Rep a,Rep b){
     constexpr Rep degree = calculateDegree(genpoly);
-    constexpr Rep degreeTerm = 1<<degree;
+    constexpr Rep degreeTerm = DegTerm<genpoly>::num;
     constexpr Rep upperLimit = DoubleMaxDeg - 1 - degree;
     Rep ret=0;
     while(b!=0){
@@ -35,57 +36,50 @@ constexpr Rep slowMult(Rep a,Rep b){
         genpoly_shifted/=2;
         degreeTerm_shifted/=2;
     }
-    /*
-    for(Rep i=upper_limit;i>=0;--i){
-        ret ^= (  ( genpoly<<i ) * ( !!( ret&(degreeTerm<<i) ) )  );
-    }*/ 
-    // the above for-loop does not work, because 
-    // 1. unsigned integer overflow is apparently banned in constexpr context
-    // 2. compiler tests constexpr expressions so that they will not act fuzzy "whatever" we do
-    // 3. genpoly << (2^32-1) , of course, causes overflow.
-    return ret;
-} 
-
-template<Rep genpoly,Rep gen>
-constexpr array<Rep,DegTerm<genpoly>::num> makeExpTable(){
-    constexpr Rep order = DegTerm<genpoly>::num - 1;
-    Rep a = 1u;
-    array<Rep,DegTerm<genpoly>::num> ret{0};
-    for(int i=0;i<order;++i){
-        ret[i] = a;
-        a = slowMult<genpoly>(a,gen); // gen is on the right for a reason
-    }
     return ret;
 }
 
-template<Rep genpoly,Rep gen>
-constexpr array<int,DegTerm<genpoly>::num> makeLogTable(){
-    constexpr Rep order = DegTerm<genpoly>::num-1;
-    Rep a = 1;
-    array<int,DegTerm<genpoly>::num> ret{0};
-    for(int i=0;i<order;++i){
-        ret[a] = i; // question: why isn't potential out-of-bounds access caught here?
-        a = slowMult<genpoly>(a,gen);
+template<Rep genpoly>
+constexpr array<array<Rep,DegTerm<genpoly>::num>,DegTerm<genpoly>::num> makeMultTable(){
+    constexpr Rep numberOfElements = DegTerm<genpoly>::num;
+    array<array<Rep,numberOfElements>,numberOfElements> multTable {0};
+
+    for(Rep i=0;i<numberOfElements;++i){
+        for(Rep j=0;j<numberOfElements;++j){
+            multTable[i][j] = slowMult<genpoly>(i,j);
+        }
     }
-    return ret;
+    return multTable;
+}
+
+template<Rep genpoly>
+constexpr array<Rep,DegTerm<genpoly>::num> makeInvTable(){
+    constexpr Rep numberOfElements = DegTerm<genpoly>::num;
+    constexpr Rep order = numberOfElements - 1;
+    array<Rep,numberOfElements> invTable {0};
+
+    for(Rep i=1;i<numberOfElements;++i){
+        Rep a = 1;
+        for(int j=0;j<order-1;++j) a = slowMult<genpoly>(a,i);
+        invTable[i] = a;
+    }
+    return invTable;
 }
 
 template<Rep GeneratingPolynomial,Rep generator>
 class GF2{
-    static_assert(GeneratingPolynomial<0x00020000);
-    static_assert(generator>0);
+    static_assert(GeneratingPolynomial < 0x00000200);
     private:
-    static constexpr Rep gen = generator;
     static constexpr Rep genpoly = GeneratingPolynomial;
     static constexpr Rep degree = calculateDegree(genpoly);
     static constexpr Rep degreeTerm = DegTerm<genpoly>::num;
     static constexpr Rep order = degreeTerm-1;
     static constexpr Rep equivDegreeTerm = genpoly^degreeTerm;
-    static constexpr array<Rep,DegTerm<genpoly>::num> gf_exp = makeExpTable<genpoly,gen>() ;
-    static constexpr array<int,DegTerm<genpoly>::num> gf_log = makeLogTable<genpoly,gen>() ;
+    static constexpr array<array<Rep,degreeTerm>,degreeTerm> multTable = makeMultTable<genpoly>();
+    static constexpr array<Rep,degreeTerm> invTable = makeInvTable<genpoly>();
+
     Rep rep;
     static_assert(generator < degreeTerm);
-    //=======================NONSTATIC==========================
     public:
     GF2(Rep __rep=0): rep{__rep} {}
     const GF2 operator+(const GF2& other) const{
@@ -99,15 +93,13 @@ class GF2{
     }
     const GF2 operator-() const{
         return GF2(rep);
-    }
+    } 
     const GF2 operator*(const GF2& other) const{
-        if(rep==0||other.rep==0) return GF2(0);
-        return GF2(gf_exp.at((gf_log.at(rep)+gf_log.at(other.rep))%order));
+        return GF2(multTable.at(rep).at(other.rep));
     }
     const GF2 operator/(const GF2& other) const{
-        if(rep==0) return GF2(0);
-        else if(other.rep==0) throw std::invalid_argument("Division by Zero");
-        return GF2(gf_exp.at((gf_log.at(rep)-gf_log.at(other.rep)+order)%order));
+        if (other.rep==0) throw std::invalid_argument("Division by Zero");
+        return GF2(multTable.at(rep).at(invTable.at(other.rep)));
     }
     GF2& operator+=(const GF2& other){
         rep ^= other; return (*this);
@@ -119,23 +111,19 @@ class GF2{
         rep ^= other; return (*this);
     }
     GF2& operator*=(const GF2& other){
-        if(rep==0 || other.rep==0) rep=0;
-        else rep = gf_exp.at((gf_log.at(rep)+gf_log.at(other.rep))%order);
-        return (*this);
+        rep = multTable.at(rep).at(other.rep); return (*this);
     }
     GF2& operator/=(const GF2& other){
-        if(rep==0) return (*this);
-        else if(other.rep==0) throw std::invalid_argument("Division by Zero");
-        rep = gf_exp.at((gf_log.at(rep)-gf_log.at(other.rep)+order)%order);
+        if(other.rep==0) throw std::invalid_argument("Division by Zero");
+        rep = multTable.at(rep).at(invTable[other.rep]);
         return (*this);
     }
     void print(ostream& out) const{
         std::stringstream ss;
-        ss << std::hex << rep;
+        ss << std::hex << rep ;
         out << ss.str();
     }
 };
-
 
 template<Rep genpoly,Rep gen>
 ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
@@ -150,6 +138,4 @@ int main(){
     std::cout << std::setw(2) << x*y << ' ' << std::setw(2)<<x << ' ' << std::setw(2)<<y << std::endl;
     x/=y;
     std::cout << std::setw(2) << x*y << ' ' << std::setw(2)<<x << ' ' << std::setw(2)<<y << std::endl;
-} // this compiles well
-// compile-time evaluation of gf_exp and gf_log is a success 
-// (otherwise the initialization of array<Rep,~~~> should result in errors)
+}
