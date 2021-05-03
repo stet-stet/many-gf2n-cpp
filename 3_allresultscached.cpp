@@ -53,17 +53,19 @@ constexpr array<array<Rep,DegTerm<genpoly>::num>,DegTerm<genpoly>::num> makeMult
 }
 
 template<Rep genpoly>
-constexpr array<Rep,DegTerm<genpoly>::num> makeInvTable(){
+constexpr array<array<Rep,DegTerm<genpoly>::num>,DegTerm<genpoly>::num> makeDivTable(){
     constexpr Rep numberOfElements = DegTerm<genpoly>::num;
-    constexpr Rep order = numberOfElements - 1;
-    array<Rep,numberOfElements> invTable {0};
+    constexpr Rep order = numberOfElements-1;
+    array<array<Rep,numberOfElements>,numberOfElements> divTable {0};
 
-    for(Rep i=1;i<numberOfElements;++i){
-        Rep a = 1;
-        for(int j=0;j<order-1;++j) a = slowMult<genpoly>(a,i);
-        invTable[i] = a;
+    for(Rep right=1;right<numberOfElements;++right){
+        Rep inv=1;
+        for(int j=0;j<order-1;++j) inv = slowMult<genpoly>(inv,right);
+        for(Rep left=0;left<numberOfElements;++left){
+            divTable[left][right] = slowMult<genpoly>(left,inv);
+        }
     }
-    return invTable;
+    return divTable;
 }
 
 template<Rep GeneratingPolynomial>
@@ -76,7 +78,7 @@ class GF2{
     static constexpr Rep order = degreeTerm-1;
     static constexpr Rep equivDegreeTerm = genpoly^degreeTerm;
     static constexpr array<array<Rep,degreeTerm>,degreeTerm> multTable = makeMultTable<genpoly>();
-    static constexpr array<Rep,degreeTerm> invTable = makeInvTable<genpoly>();
+    static constexpr array<array<Rep,degreeTerm>,degreeTerm> divTable = makeDivTable<genpoly>();
 
     Rep rep;
     public:
@@ -98,7 +100,7 @@ class GF2{
     }
     const GF2 operator/(const GF2& other) const{
         if (other.rep==0) throw std::invalid_argument("Division by Zero");
-        return GF2(multTable.at(rep).at(invTable.at(other.rep)));
+        return GF2(divTable.at(rep).at(other.rep));
     }
     GF2& operator+=(const GF2& other){
         rep ^= other; return (*this);
@@ -114,8 +116,7 @@ class GF2{
     }
     GF2& operator/=(const GF2& other){
         if(other.rep==0) throw std::invalid_argument("Division by Zero");
-        rep = multTable.at(rep).at(invTable[other.rep]);
-        return (*this);
+        rep = divTable.at(rep).at(other.rep);  return (*this);
     }
     void print(ostream& out) const{
         std::stringstream ss;
