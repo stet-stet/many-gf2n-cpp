@@ -119,7 +119,7 @@ ostream& operator<<(ostream& out,const GF2<genpoly,gen>& x){
 }
 
 template<Rep genpoly,Rep gen>
-ostream& operator<<(ostream& out,const typename GF2<genpoly,gen>::FieldElement& x){
+ostream& operator<<(ostream& out,const typename GF2<genpoly,gen>::typename FieldElement& x){
     x.print(); return out;
 }
 
