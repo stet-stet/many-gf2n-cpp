@@ -13,15 +13,11 @@ namespace GF2Four{
     // "Rep" = inner representation for GF2 elements, to be introduces
     // "Rudimentary" = to be used where int is needed but bigger than "Rep".
 
-
-    constexpr int MaxDep = 16;
-    constexpr int DoubleMaxDeg = 32;
-
     template<typename Rep>
     constexpr Rudimentary calculateDegree(Rep arg){
-        int ret=0;
+        int ret=-1;
         for(;arg;arg>>=1) ++ret;
-        return ret-1;
+        return ret;
     }
 
     template<typename Rep>
@@ -32,13 +28,14 @@ namespace GF2Four{
     template<typename Rep>
     constexpr Rep slowMult(Rudimentary genpoly, Rep a, Rep b){
         //truncate longest term from genpoly
-        Rep addTerm = genpoly - degreeTerm(genpoly);
+        Rep addTerm = (genpoly - degreeTerm(genpoly));
+        Rep highestOrderTerm = (degreeTerm(genpoly) / 2);
         Rep ret=0;
         while(b!=0){
             ret ^= a*(b&1);
             b/=2;
-            Rep temp = !!( a & degreeTerm(a) ) ;
-            a -= degreeTerm(a);
+            Rep temp = !!( a >= highestOrderTerm ) ;
+            a -= highestOrderTerm * temp;
             a *= 2;
             a ^= temp * addTerm;
         }
@@ -46,7 +43,7 @@ namespace GF2Four{
     }
 
     template<typename Rep,Rudimentary genpoly>
-    constexpr std::pair< array<Rep,degreeTerm(genpoly)>, array<Rep,degreeTerm(genpoly)> > makeTables(Rep gen){
+    constexpr auto makeTables(Rep gen){
         constexpr Rudimentary order = degreeTerm(genpoly) - 1;
         Rep a = 1;
         array<Rep,degreeTerm(genpoly)> expTable{0};
@@ -56,19 +53,24 @@ namespace GF2Four{
             divTable[a] = i;
             a = slowMult(genpoly,a,gen);
         }
-        return {expTable,divTable};
+        return std::make_pair(expTable,divTable);
     }
 
     template<Rudimentary genpoly>
     class GF2{
-
-        using Rep = std::conditional<(genpoly < 0x00000200), std::uint8_t, std::uint32_t>;
+        public:
+        using Rep = typename std::conditional<(genpoly < 0x00000200), std::uint8_t, std::uint32_t>::type;
 
         static_assert(genpoly >= 0x00000010); // no, if you want GF(2), just please use bool
         static_assert(genpoly < 0x00020000);
         
         private:
-        static constexpr auto [gf_exp,gf_log] = makeTables(0x02); //hardcoded gen for now
+        constexpr static Rep gen = 2u; //hardcoded for now
+        constexpr static Rudimentary order = degreeTerm(genpoly)-1;
+        constexpr static auto gf_tables = makeTables<Rep,genpoly>(gen);
+        constexpr static auto& gf_exp = gf_tables.first;
+        constexpr static auto& gf_log = gf_tables.second;
+        //static constexpr auto [gf_exp,gf_log] = makeTables(0x02); //why won't this compile?
         Rep rep;
         
         public:
@@ -102,7 +104,7 @@ namespace GF2Four{
         }
         void print(ostream& out) const{
             std::stringstream ss;
-            ss << std::hex << rep;
+            ss << std::hex << (unsigned int)rep;
             out << ss.str();
         }
     };
@@ -113,12 +115,16 @@ namespace GF2Four{
     }
 }
 
+/*
 int main(){
-    GF2Four::GF2<0x11d> x(0x05), y(0x03);
+    constexpr GF2Four::Rudimentary poly = 0x11d;
+    GF2Four::GF2<poly> x(0x05), y(0x03);
+    std::cout << typeid(GF2Four::GF2<poly>::Rep).name() << std::endl;
+    std::cout << "uint8_t : " << typeid(std::uint8_t).name() << " / uint32_t : " << typeid(std::uint32_t).name() << std::endl;
     std::cout << std::setfill('0');
     std::cout << std::setw(2) << x*y << ' ' << std::setw(2)<<x << ' ' << std::setw(2)<<y << std::endl;
     x*=y;
     std::cout << std::setw(2) << x*y << ' ' << std::setw(2)<<x << ' ' << std::setw(2)<<y << std::endl;
     x/=y;
     std::cout << std::setw(2) << x*y << ' ' << std::setw(2)<<x << ' ' << std::setw(2)<<y << std::endl;
-}
+}*/
