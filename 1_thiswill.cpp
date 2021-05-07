@@ -110,13 +110,13 @@ class GF2{
         return GF2(gf_exp.at((gf_log.at(rep)-gf_log.at(other.rep)+order)%order));
     }
     GF2& operator+=(const GF2& other){
-        rep ^= other; return (*this);
+        rep ^= other.rep; return (*this);
     }
     GF2& operator-=(const GF2& other){
-        rep ^= other; return (*this);
+        rep ^= other.rep; return (*this);
     }
     GF2& operator^=(const GF2& other){
-        rep ^= other; return (*this);
+        rep ^= other.rep; return (*this);
     }
     GF2& operator*=(const GF2& other){
         if(rep==0 || other.rep==0) rep=0;

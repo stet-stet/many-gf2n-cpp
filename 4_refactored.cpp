@@ -43,17 +43,17 @@ namespace GF2Four{
     }
 
     template<typename Rep,Rudimentary genpoly>
-    constexpr auto makeTables(Rep gen){
+    constexpr std::pair<array<Rep,degreeTerm(genpoly)>,array<Rudimentary,degreeTerm(genpoly)>> makeTables(Rep gen){
         constexpr Rudimentary order = degreeTerm(genpoly) - 1;
         Rep a = 1;
         array<Rep,degreeTerm(genpoly)> expTable{0};
-        array<Rep,degreeTerm(genpoly)> divTable{0};
-        for(Rep i=0;i<order;++i){
+        array<Rudimentary,degreeTerm(genpoly)> logTable{0};
+        for(Rudimentary i=0;i<order;++i){
             expTable[i] = a;
-            divTable[a] = i;
+            logTable[a] = i;
             a = slowMult(genpoly,a,gen);
         }
-        return std::make_pair(expTable,divTable);
+        return std::make_pair(expTable,logTable);
     }
 
     template<Rudimentary genpoly>
@@ -67,20 +67,20 @@ namespace GF2Four{
         private:
         constexpr static Rep gen = 2u; //hardcoded for now
         constexpr static Rudimentary order = degreeTerm(genpoly)-1;
-        constexpr static auto gf_tables = makeTables<Rep,genpoly>(gen);
+        constexpr static auto gf_tables = makeTables<Rep,genpoly>(gen); // fails without Rep. Why??
         constexpr static auto& gf_exp = gf_tables.first;
         constexpr static auto& gf_log = gf_tables.second;
         //static constexpr auto [gf_exp,gf_log] = makeTables(0x02); //why won't this compile?
         Rep rep;
         
         public:
-        GF2(Rep __rep=0): rep{__rep} {}
+        explicit GF2(Rep __rep=0): rep{__rep} {}
         inline const GF2 operator+(const GF2& other) const{ return GF2(rep^other.rep); }
-        inline const GF2 operator-(const GF2& other) const{ return rep + other; }
-        inline const GF2 operator^(const GF2& other) const{ return rep + other; }
+        inline const GF2 operator-(const GF2& other) const{ return GF2(rep^other.rep); }
+        inline const GF2 operator^(const GF2& other) const{ return GF2(rep^other.rep); }
         inline const GF2 operator-() const{ return GF2(rep); }
         const GF2 operator*(const GF2& other) const{
-            if( !(rep * other.rep) ) return GF2(0);
+            if( rep==0 || other.rep == 0 ) return GF2(0);
             return GF2(gf_exp.at((gf_log.at(rep)+gf_log.at(other.rep))%order));
         }
         const GF2 operator/(const GF2& other) const{
@@ -88,11 +88,11 @@ namespace GF2Four{
             else if( !(other.rep) ) throw std::invalid_argument("Division by Zero");
             return GF2(gf_exp.at((gf_log.at(rep)-gf_log.at(other.rep)+order)%order));
         }
-        GF2& operator+=(const GF2& other){ rep^=other; return(*this); }
-        GF2& operator-=(const GF2& other){ return (rep+=other); }
-        GF2& operator^=(const GF2& other){ return (rep+=other); }
+        GF2& operator+=(const GF2& other){ rep ^= other.rep; return *this; }
+        GF2& operator-=(const GF2& other){ rep ^= other.rep; return *this; }
+        GF2& operator^=(const GF2& other){ rep ^= other.rep; return *this; }
         GF2& operator*=(const GF2& other){
-            if( !(rep * other.rep) ) rep = 0;
+            if( rep==0 || other.rep == 0 ) rep = 0;
             else rep = gf_exp.at((gf_log.at(rep)+gf_log.at(other.rep))%order);
             return (*this);
         }
@@ -107,6 +107,12 @@ namespace GF2Four{
             ss << std::hex << (unsigned int)rep;
             out << ss.str();
         }
+        void printTables() const{
+            for(auto x: gf_exp) std::cout << (unsigned int)x << ' ';
+            std::cout << std::endl;
+            for(auto x: gf_log) std::cout << x << ' ';
+            std::cout << std::endl;
+        }
     };
     
     template<Rudimentary genpoly>
@@ -118,7 +124,7 @@ namespace GF2Four{
 /*
 int main(){
     constexpr GF2Four::Rudimentary poly = 0x11d;
-    GF2Four::GF2<poly> x(0x05), y(0x03);
+    GF2Four::GF2<poly> x(0x03), y(0x03);
     std::cout << typeid(GF2Four::GF2<poly>::Rep).name() << std::endl;
     std::cout << "uint8_t : " << typeid(std::uint8_t).name() << " / uint32_t : " << typeid(std::uint32_t).name() << std::endl;
     std::cout << std::setfill('0');
