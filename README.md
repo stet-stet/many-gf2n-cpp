@@ -31,14 +31,14 @@ Various implementations of GF(2^n), done in c++17. Intended as a practice (or so
 [41and51]: https://github.com/stet-stet/many-gf2n-cpp/blob/main/41and51.png?raw=true
 
 For each entry, timespans are measured in microseconds. 
-The addition results are printed because calculation is sometimes omitted with -O1 or -O2 flags on if we choose not to print this.
+The addition results are printed because calculation is sometimes omitted entirely with `-O1` or `-O2` flags (if we choose not to print this).
 
 ### Comment
 
-* I fail to see how 20,000,000 GF2 multiplications+additions can be faster than 20,000,000 int multiplication+additions.
+* I fail to see how 20,000,000 GF2 multiplications+additions can be faster than 20,000,000 int multiplication+additions (with `5_` file and `-O2` flag on)
   * int multiplications are handled by one instruction, addition by another.
   * GF2 multiplications are handled by at least one memory access, addition with at least one more.
   * why & how is memory access faster than an instruction?
-  * have I missed something?
+  * have I missed something? is something being pipelined in that, and not in this?
   * or have I messed up (possibly by using std::vector<pair< T,T >>)?
 
