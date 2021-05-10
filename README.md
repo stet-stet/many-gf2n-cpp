@@ -62,5 +62,6 @@ The addition results are printed because calculation is sometimes omitted entire
 
 * Dramatic change when O0->O1.
   * currently looking at [this](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) to see what's responsible for the 4x change in speed
+  * promising candidate is: -fforward-propagate - four memory accesses to one instruction?? is that even possible, even with SSE or AVX?
 
 

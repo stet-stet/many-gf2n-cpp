@@ -17,7 +17,7 @@ inline __attribute__((always_inline)) void DoNotOptimize(Tp const& value){
     // this is an "observable event"
     // order of calculation cannot be changed before/after a call to DoNotOptimize
     asm volatile("" : :  "r,m"(value) : "memory");
-} 
+}
 
 auto makeRandomInts(int howmany){
     vector<int> ret(howmany);
