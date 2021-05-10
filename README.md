@@ -17,7 +17,7 @@ Various implementations of GF(2^n), done in c++17. Intended as a practice (or so
 * Compare & suggest a plausible explanation for all observed phonomena.
 
 
-## Preliminary measurements
+## Experiment Set 1 (make 20M pairs, multiply and add to `sum`)
 
 * In all measurements, the generating polynomial is 0x11d, and gen(if needed) is 0x02
 * in `4_refactored.cpp`, only the exp and log tables(relative to the generator element 0x02) are calculated in compile time & cached.
@@ -41,4 +41,26 @@ The addition results are printed because calculation is sometimes omitted entire
   * why & how is memory access faster than an instruction?
   * have I missed something? is something being pipelined in that, and not in this?
   * or have I messed up (possibly by using std::vector<pair< T,T >>)?
+
+## Experiment Set 2 (multiply 20M numbers to `sum`)
+
+* relevant: `4_3_betterbenchmark.cpp` and `5_3_betterbenchmark.cpp` (and the `4_2` and `5_2` files)
+* `DoNotOptimize` combats calculation elision
+  * this function allocates the value provided to a register
+  * this is an *unobservable* event, apparently - hence any alteration in the value provided should take place between two calls.
+  * see [this answer at stackoverflow](https://stackoverflow.com/a/38025837)
+* convention is same as above.
+* Also, I tried to manually "unroll the loop", because `5_2` with O2 ran much slower than expected.
+  * See the code to see how I did this
+* the results are as follows:
+
+![43and53]
+
+[43and53]: [41and51]: https://github.com/stet-stet/many-gf2n-cpp/blob/main/43and53.png?raw=true
+
+### Comment
+
+* Dramatic change when O0->O1.
+  * currently looking at [this](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) to see what's responsible for the 4x change in speed
+
 
