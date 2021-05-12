@@ -1,0 +1,12 @@
+4_2
+result(not unrolled): d4
+503548 us (loop not unrolled)
+result(should be the same as above): d4
+492338 us (loop unrolled manually)
+
+compared to int multiplications:
+
+result(not unrolled):1066248385
+67232 us (loop not unrolled)
+result(should be the same as above):1066248385
+55334 us (loop unrolled manually)

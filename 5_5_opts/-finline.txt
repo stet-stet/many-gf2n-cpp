@@ -1,0 +1,12 @@
+4_2
+result(not unrolled): 2e
+503254 us (loop not unrolled)
+result(should be the same as above): 2e
+493039 us (loop unrolled manually)
+
+compared to int multiplications:
+
+result(not unrolled):-2050588515
+67994 us (loop not unrolled)
+result(should be the same as above):-2050588515
+55563 us (loop unrolled manually)

@@ -1,0 +1,12 @@
+4_2
+result(not unrolled): d3
+502920 us (loop not unrolled)
+result(should be the same as above): d3
+493110 us (loop unrolled manually)
+
+compared to int multiplications:
+
+result(not unrolled):-60662301
+67535 us (loop not unrolled)
+result(should be the same as above):-60662301
+55435 us (loop unrolled manually)

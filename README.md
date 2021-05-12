@@ -19,6 +19,7 @@ Various implementations of GF(2^n), done in c++17. Intended as a practice (or so
 
 ## Experiment Set 1 (make 20M pairs, multiply and add to `sum`)
 
+* Everything runs in a GCP e2-medium instance - 2 vCPUs, 4GB memory. Intel Broadwell CPU.
 * In all measurements, the generating polynomial is 0x11d, and gen(if needed) is 0x02
 * in `4_refactored.cpp`, only the exp and log tables(relative to the generator element 0x02) are calculated in compile time & cached.
 * in `5_refactored_allcaches.cpp`, the multiplication and division tables are calculated in compile time & cached.
@@ -62,6 +63,18 @@ The addition results are printed because calculation is sometimes omitted entire
 
 * Dramatic change when O0->O1.
   * currently looking at [this](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html) to see what's responsible for the 4x change in speed
-  * promising candidate is: -fforward-propagate - four memory accesses to one instruction?? is that even possible, even with SSE or AVX?
+  * I've tried all flags listed there, but they don't seem to have a big effect, even when we apply all of them.
+  * `g++ -S -fverbose-asm -std=c++17 5_3_betterbenchmark.cpp -o 53`. `nano 53`, Ctrl+Q, find "optim".
+  * See `53_assemblynotes.md` for an analysis on assembly code: Assembly codes alone aren't enough to explain the 4x difference in execution speed.
+
+* I would like to enable only inlining and run code again, but activating only a few (instead of whole `O1`) does not seem to work well - I get a link error.
+
+## Experiment Set 2-1 (Identify the factor could explain the 4x difference in execution speed in Exp.Set 2)
+
+* Initial guess: the two measurements affect each other in some way
+* I switched the order of execution, this has little to no effect on anything: see `6_3_betterbenchmark.cpp`
+  * The two measurements are pretty much independent!
+* Another guess: Instruction-level parallelism?
+* Another guess: Better exploitation of the memory hierarchy?
 
 
