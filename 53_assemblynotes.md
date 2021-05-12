@@ -6,9 +6,10 @@
 * `g++ -fverbose-asm -S -std=c++17 5_3_betterbenchmark.cpp -o 53_O0`
 * `g++ -fverbose-asm -S -std=c++17 5_3_betterbenchmark.cpp -o 53_O1`
 
+Curation follows.
+
 ## 53_O0
 ### not unrolled
-* the assembly code for GF2 multiplication loop looks like this.
 
 ```
 132701 # 5_3_betterbenchmark.cpp:54:     for(size_t i=0;i<howmany;i++){
