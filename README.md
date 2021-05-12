@@ -57,7 +57,7 @@ The addition results are printed because calculation is sometimes omitted entire
 
 ![43and53]
 
-[43and53]: [41and51]: https://github.com/stet-stet/many-gf2n-cpp/blob/main/43and53.png?raw=true
+[43and53]: https://github.com/stet-stet/many-gf2n-cpp/blob/main/43and53.png?raw=true
 
 ### Comment
 
