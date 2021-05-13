@@ -1999,7 +1999,7 @@ main:
 # 6_3_2.cpp:52:     for(size_t i=0;i<howmany;i+=4){
 	cmpq	%r9, %rsi	# _128, ivtmp.141
 	jne	.L171	#,
-# We need to move sum$rep(temp) on r11 to actual location in memory - actually, code will probably work fine without this.
+# We need to move sum$rep(temp) on r11 to actual location in memory.
     movb    %r11b, 14(%rsp) #...and now the rest can stay unmodified.
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
 	movzbl	%r8b, %r8d	# _62, _62

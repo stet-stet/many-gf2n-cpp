@@ -1,10 +1,10 @@
-	.file	"6_3_2.cpp"
+	.file	"6_3_3.cpp"
 # GNU C++17 (Debian 8.3.0-6) version 8.3.0 (x86_64-linux-gnu)
 #	compiled by GNU C version 8.3.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.20-GMP
 
 # GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-# options passed:  -imultiarch x86_64-linux-gnu -D_GNU_SOURCE 6_3_2.cpp
-# -mtune=generic -march=x86-64 -auxbase-strip 632_asm -O1 -std=c++17
+# options passed:  -imultiarch x86_64-linux-gnu -D_GNU_SOURCE 6_3_3.cpp
+# -mtune=generic -march=x86-64 -auxbase-strip 633_asm -O1 -std=c++17
 # -fverbose-asm
 # options enabled:  -fPIC -fPIE -faggressive-loop-optimizations
 # -fasynchronous-unwind-tables -fauto-inc-dec -fbranch-count-reg
@@ -158,10 +158,10 @@ _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm429496
 # /usr/include/c++/8/bits/random.tcc:466:     }
 	ret	
 .L17:
-	movq	%rdi, %rdx	# this, ivtmp.104
+	movq	%rdi, %rdx	# this, ivtmp.120
 	leaq	1816(%rdi), %r9	#, _86
 # /usr/include/c++/8/bits/random.tcc:455:       if (_M_p >= state_size)
-	movq	%rdi, %rcx	# this, ivtmp.111
+	movq	%rdi, %rcx	# this, ivtmp.127
 # /usr/include/c++/8/bits/random.tcc:406: 		       ^ ((__y & 0x01) ? __a : 0));
 	movl	$2567483615, %r8d	#, tmp162
 .L8:
@@ -184,9 +184,9 @@ _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm429496
 # /usr/include/c++/8/bits/random.tcc:406: 		       ^ ((__y & 0x01) ? __a : 0));
 	xorq	%rsi, %rax	# _31, tmp144
 	movq	%rax, (%rcx)	# tmp144, MEM[base: _81, offset: 0B]
-	addq	$8, %rcx	#, ivtmp.111
+	addq	$8, %rcx	#, ivtmp.127
 # /usr/include/c++/8/bits/random.tcc:401:       for (size_t __k = 0; __k < (__n - __m); ++__k)
-	cmpq	%r9, %rcx	# _86, ivtmp.111
+	cmpq	%r9, %rcx	# _86, ivtmp.127
 	jne	.L8	#,
 	leaq	3168(%rdi), %r8	#, _77
 # /usr/include/c++/8/bits/random.tcc:414: 		       ^ ((__y & 0x01) ? __a : 0));
@@ -211,9 +211,9 @@ _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm429496
 # /usr/include/c++/8/bits/random.tcc:414: 		       ^ ((__y & 0x01) ? __a : 0));
 	xorq	%rcx, %rax	# _45, tmp150
 	movq	%rax, 1816(%rdx)	# tmp150, MEM[base: _60, offset: 1816B]
-	addq	$8, %rdx	#, ivtmp.104
+	addq	$8, %rdx	#, ivtmp.120
 # /usr/include/c++/8/bits/random.tcc:409:       for (size_t __k = (__n - __m); __k < (__n - 1); ++__k)
-	cmpq	%r8, %rdx	# _77, ivtmp.104
+	cmpq	%r8, %rdx	# _77, ivtmp.120
 	jne	.L10	#,
 # /usr/include/c++/8/bits/random.tcc:417:       _UIntType __y = ((_M_x[__n - 1] & __upper_mask)
 	movq	4984(%rdi), %rax	# this_13(D)->_M_x, tmp151
@@ -333,8 +333,8 @@ _ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm3
 	leaq	24(%rsp), %r14	#, tmp126
 .L24:
 # /usr/include/c++/8/bits/uniform_int_dist.h:74: 	: _M_a(__a), _M_b(__b)
-	movl	$0, 24(%rsp)	#, D.87282._M_a
-	movl	%r15d, 28(%rsp)	# _4, D.87282._M_b
+	movl	$0, 24(%rsp)	#, D.87294._M_a
+	movl	%r15d, 28(%rsp)	# _4, D.87294._M_b
 # /usr/include/c++/8/bits/uniform_int_dist.h:268: 		__tmp = (__uerngrange * operator()
 	movq	%r14, %rdx	# tmp126,
 	movq	%rbp, %rsi	# __urng,
@@ -537,7 +537,7 @@ _Z14makeRandomIntsi:
 	subq	$10064, %rsp	#,
 	.cfi_def_cfa_offset 10112
 	movq	%rdi, %rbp	# .result_ptr, <retval>
-# 6_3_2.cpp:14:     vector<int> ret(howmany);
+# 6_3_3.cpp:14:     vector<int> ret(howmany);
 	movslq	%esi, %r12	# howmany, _1
 # /usr/include/c++/8/bits/stl_vector.h:100: 	: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
 	movq	$0, (%rdi)	#, MEM[(struct _Vector_impl *)ret_15(D)]._M_start
@@ -562,13 +562,13 @@ _Z14makeRandomIntsi:
 	leaq	(%rax,%rbx), %rdi	#, __first
 # /usr/include/c++/8/bits/stl_vector.h:313: 	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
 	movq	%rdi, 16(%rbp)	# __first, MEM[(struct _Vector_base *)ret_15(D)]._M_impl._M_end_of_storage
-	movl	$0, %edx	#, ivtmp.117
+	movl	$0, %edx	#, ivtmp.133
 .L46:
 # /usr/include/c++/8/bits/stl_algobase.h:754: 	*__first = __tmp;
-	movl	$0, (%rax,%rdx,4)	#, MEM[base: _70, index: ivtmp.117_75, step: 4, offset: 0B]
-	addq	$1, %rdx	#, ivtmp.117
+	movl	$0, (%rax,%rdx,4)	#, MEM[base: _70, index: ivtmp.133_75, step: 4, offset: 0B]
+	addq	$1, %rdx	#, ivtmp.133
 # /usr/include/c++/8/bits/stl_algobase.h:753: 	   __niter > 0; --__niter, (void) ++__first)
-	cmpq	%rdx, %r12	# ivtmp.117, _1
+	cmpq	%rdx, %r12	# ivtmp.133, _1
 	jne	.L46	#,
 .L56:
 # /usr/include/c++/8/bits/stl_vector.h:1489: 	this->_M_impl._M_finish =
@@ -610,7 +610,7 @@ _Z14makeRandomIntsi:
 .LEHB4:
 	call	_ZNSt13random_device9_M_getvalEv@PLT	#
 .LEHE4:
-# 6_3_2.cpp:16:     std::mt19937 gen(rd());
+# 6_3_3.cpp:16:     std::mt19937 gen(rd());
 	movl	%eax, %esi	# _32, _32
 # /usr/include/c++/8/bits/random.h:489:       { seed(__sd); }
 	leaq	48(%rsp), %rdi	#, tmp123
@@ -618,19 +618,19 @@ _Z14makeRandomIntsi:
 # /usr/include/c++/8/bits/uniform_int_dist.h:74: 	: _M_a(__a), _M_b(__b)
 	movl	$1, 40(%rsp)	#, MEM[(struct param_type *)&dis]._M_a
 	movl	$214800000, 44(%rsp)	#, MEM[(struct param_type *)&dis]._M_b
-# 6_3_2.cpp:18:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:18:     for(size_t i=0;i<howmany;++i){
 	testq	%r12, %r12	# _1
 	je	.L48	#,
-# 6_3_2.cpp:18:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:18:     for(size_t i=0;i<howmany;++i){
 	movl	$0, %ebx	#, i
 # /usr/include/c++/8/bits/uniform_int_dist.h:166:         { return this->operator()(__urng, _M_param); }
 	leaq	40(%rsp), %r13	#, tmp124
 	leaq	48(%rsp), %r14	#, tmp125
 	jmp	.L50	#
 .L49:
-# 6_3_2.cpp:18:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:18:     for(size_t i=0;i<howmany;++i){
 	addq	$1, %rbx	#, i
-# 6_3_2.cpp:18:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:18:     for(size_t i=0;i<howmany;++i){
 	cmpq	%rbx, %r12	# i, _1
 	je	.L48	#,
 .L50:
@@ -639,18 +639,18 @@ _Z14makeRandomIntsi:
 	movq	%r14, %rsi	# tmp125,
 	movq	%r13, %rdi	# tmp124,
 	call	_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE	#
-# 6_3_2.cpp:19:         ret[i]= dis(gen);
+# 6_3_3.cpp:19:         ret[i]= dis(gen);
 	movq	0(%rbp), %rdx	# ret_15(D)->D.80165._M_impl._M_start, ret_15(D)->D.80165._M_impl._M_start
 	movl	%eax, (%rdx,%rbx,4)	# _35, *_13
 # /usr/include/c++/8/bits/stl_vector.h:933: 	return *(this->_M_impl._M_start + __n);
 	movq	0(%rbp), %rax	# ret_15(D)->D.80165._M_impl._M_start, ret_15(D)->D.80165._M_impl._M_start
 	leaq	(%rax,%rbx,4), %rdx	#, _22
-# 6_3_2.cpp:20:         if(ret[i]%2==0) ret[i]--;
+# 6_3_3.cpp:20:         if(ret[i]%2==0) ret[i]--;
 	movl	(%rdx), %eax	# *_22, _3
-# 6_3_2.cpp:20:         if(ret[i]%2==0) ret[i]--;
+# 6_3_3.cpp:20:         if(ret[i]%2==0) ret[i]--;
 	testb	$1, %al	#, _3
 	jne	.L49	#,
-# 6_3_2.cpp:20:         if(ret[i]%2==0) ret[i]--;
+# 6_3_3.cpp:20:         if(ret[i]%2==0) ret[i]--;
 	subl	$1, %eax	#, tmp130
 	movl	%eax, (%rdx)	# tmp130, *_22
 	jmp	.L49	#
@@ -698,7 +698,7 @@ _Z14makeRandomIntsi:
 # /usr/include/c++/8/bits/random.h:1577:     { _M_fini(); }
 	leaq	5056(%rsp), %rdi	#, tmp131
 	call	_ZNSt13random_device7_M_finiEv@PLT	#
-# 6_3_2.cpp:23: }
+# 6_3_3.cpp:23: }
 	movq	%rbp, %rax	# <retval>,
 	addq	$10064, %rsp	#,
 	.cfi_def_cfa_offset 48
@@ -775,7 +775,7 @@ _Z15makeRandomPairsi:
 	subq	$10064, %rsp	#,
 	.cfi_def_cfa_offset 10112
 	movq	%rdi, %r12	# .result_ptr, <retval>
-# 6_3_2.cpp:26:     vector<GF2> ret(howmany);
+# 6_3_3.cpp:26:     vector<GF2> ret(howmany);
 	movslq	%esi, %r13	# howmany, _1
 # /usr/include/c++/8/bits/stl_vector.h:100: 	: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
 	movq	$0, (%rdi)	#, MEM[(struct _Vector_impl *)ret_10(D)]._M_start
@@ -836,7 +836,7 @@ _Z15makeRandomPairsi:
 .LEHB9:
 	call	_ZNSt13random_device9_M_getvalEv@PLT	#
 .LEHE9:
-# 6_3_2.cpp:28:     std::mt19937 gen(rd());
+# 6_3_3.cpp:28:     std::mt19937 gen(rd());
 	movl	%eax, %esi	# _24, _24
 # /usr/include/c++/8/bits/random.h:489:       { seed(__sd); }
 	leaq	48(%rsp), %rdi	#, tmp114
@@ -844,10 +844,10 @@ _Z15makeRandomPairsi:
 # /usr/include/c++/8/bits/uniform_int_dist.h:74: 	: _M_a(__a), _M_b(__b)
 	movl	$1, 40(%rsp)	#, MEM[(struct param_type *)&dis]._M_a
 	movl	$255, 44(%rsp)	#, MEM[(struct param_type *)&dis]._M_b
-# 6_3_2.cpp:30:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:30:     for(size_t i=0;i<howmany;++i){
 	testq	%r13, %r13	# _1
 	je	.L70	#,
-# 6_3_2.cpp:30:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:30:     for(size_t i=0;i<howmany;++i){
 	movl	$0, %ebx	#, i
 # /usr/include/c++/8/bits/uniform_int_dist.h:166:         { return this->operator()(__urng, _M_param); }
 	leaq	40(%rsp), %rbp	#, tmp115
@@ -857,20 +857,20 @@ _Z15makeRandomPairsi:
 	movq	%r14, %rsi	# tmp116,
 	movq	%rbp, %rdi	# tmp115,
 	call	_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE	#
-# 6_3_2.cpp:31:         ret[i] = GF2(dis(gen));
+# 6_3_3.cpp:31:         ret[i] = GF2(dis(gen));
 	movq	(%r12), %rdx	# ret_10(D)->D.81322._M_impl._M_start, ret_10(D)->D.81322._M_impl._M_start
-# 6_3_2.cpp:31:         ret[i] = GF2(dis(gen));
+# 6_3_3.cpp:31:         ret[i] = GF2(dis(gen));
 	movb	%al, (%rdx,%rbx)	# _27, MEM[(struct value_type *)_13]
-# 6_3_2.cpp:30:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:30:     for(size_t i=0;i<howmany;++i){
 	addq	$1, %rbx	#, i
-# 6_3_2.cpp:30:     for(size_t i=0;i<howmany;++i){
+# 6_3_3.cpp:30:     for(size_t i=0;i<howmany;++i){
 	cmpq	%rbx, %r13	# i, _1
 	jne	.L71	#,
 .L70:
 # /usr/include/c++/8/bits/random.h:1577:     { _M_fini(); }
 	leaq	5056(%rsp), %rdi	#, tmp119
 	call	_ZNSt13random_device7_M_finiEv@PLT	#
-# 6_3_2.cpp:34: }
+# 6_3_3.cpp:34: }
 	movq	%r12, %rax	# <retval>,
 	addq	$10064, %rsp	#,
 	.cfi_remember_state
@@ -1614,11 +1614,11 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 .LEHE15:
 # /usr/include/c++/8/bits/basic_string.h:146: 	: allocator_type(__a), _M_p(__dat) { }
 	leaq	48(%rsp), %rax	#, tmp235
-	movq	%rax, 32(%rsp)	# tmp235, MEM[(struct _Alloc_hider *)&D.87351]._M_p
+	movq	%rax, 32(%rsp)	# tmp235, MEM[(struct _Alloc_hider *)&D.87363]._M_p
 # /usr/include/c++/8/bits/basic_string.h:172:       { _M_string_length = __length; }
-	movq	$0, 40(%rsp)	#, D.87351._M_string_length
+	movq	$0, 40(%rsp)	#, D.87363._M_string_length
 # /usr/include/c++/8/bits/char_traits.h:287:       { __c1 = __c2; }
-	movb	$0, 48(%rsp)	#, MEM[(char_type &)&D.87351 + 16]
+	movb	$0, 48(%rsp)	#, MEM[(char_type &)&D.87363 + 16]
 # /usr/include/c++/8/streambuf:539:       pptr() const { return _M_out_cur; }
 	movq	128(%rsp), %rax	# MEM[(const struct basic_streambuf *)&ss + 24B]._M_out_cur, _94
 # /usr/include/c++/8/sstream:170: 	if (this->pptr())
@@ -1662,14 +1662,14 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 	jne	.L167	#,
 .L146:
 # /usr/include/c++/8/bits/basic_string.h:172:       { _M_string_length = __length; }
-	movq	%rbx, 40(%rsp)	# _111, D.87351._M_string_length
+	movq	%rbx, 40(%rsp)	# _111, D.87363._M_string_length
 # /usr/include/c++/8/bits/char_traits.h:287:       { __c1 = __c2; }
-	movq	32(%rsp), %rax	# D.87351._M_dataplus._M_p, D.87351._M_dataplus._M_p
+	movq	32(%rsp), %rax	# D.87363._M_dataplus._M_p, D.87363._M_dataplus._M_p
 	movb	$0, (%rax,%rbx)	#, MEM[(char_type &)_123]
 .L142:
 # /usr/include/c++/8/bits/basic_string.h:6328:       return __ostream_insert(__os, __str.data(), __str.size());
-	movq	40(%rsp), %rdx	# D.87351._M_string_length,
-	movq	32(%rsp), %rsi	# D.87351._M_dataplus._M_p,
+	movq	40(%rsp), %rdx	# D.87363._M_string_length,
+	movq	32(%rsp), %rsi	# D.87363._M_dataplus._M_p,
 	movq	8(%rsp), %rdi	# %sfp,
 .LEHB17:
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT	#
@@ -1687,7 +1687,7 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 .LEHE18:
 	movq	%rax, %r15	#, _116
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
-	movq	32(%rsp), %rdi	# D.87351._M_dataplus._M_p, _117
+	movq	32(%rsp), %rdi	# D.87363._M_dataplus._M_p, _117
 # /usr/include/c++/8/bits/basic_string.h:220: 	if (!_M_is_local())
 	leaq	48(%rsp), %rax	#, tmp244
 	cmpq	%rax, %rdi	# tmp244, _117
@@ -1696,10 +1696,10 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 	call	_ZdlPv@PLT	#
 .L144:
 # /usr/include/c++/8/bits/basic_string.h:168:       { _M_dataplus._M_p = __p; }
-	movq	%r15, 32(%rsp)	# _116, D.87351._M_dataplus._M_p
+	movq	%r15, 32(%rsp)	# _116, D.87363._M_dataplus._M_p
 # /usr/include/c++/8/bits/basic_string.h:200:       { _M_allocated_capacity = __capacity; }
 	movq	24(%rsp), %rax	# __new_capacity, __new_capacity
-	movq	%rax, 48(%rsp)	# __new_capacity, D.87351.D.22926._M_allocated_capacity
+	movq	%rax, 48(%rsp)	# __new_capacity, D.87363.D.22926._M_allocated_capacity
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
 	movq	160(%rsp), %rsi	# MEM[(const struct basic_string *)&ss + 96B]._M_dataplus._M_p, _110
 	movq	%r15, %rdi	# _116, _114
@@ -1711,7 +1711,7 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 .L167:
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
 	movq	160(%rsp), %rsi	# MEM[(const struct basic_string *)&ss + 96B]._M_dataplus._M_p, _110
-	movq	32(%rsp), %rdi	# D.87351._M_dataplus._M_p, _114
+	movq	32(%rsp), %rdi	# D.87363._M_dataplus._M_p, _114
 # /usr/include/c++/8/bits/basic_string.h:337: 	if (__n == 1)
 	cmpq	$1, %rbx	#, _111
 	jne	.L145	#,
@@ -1723,7 +1723,7 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 .L159:
 	movq	%rax, %rbx	#, tmp257
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
-	movq	32(%rsp), %rdi	# D.87351._M_dataplus._M_p, _102
+	movq	32(%rsp), %rdi	# D.87363._M_dataplus._M_p, _102
 # /usr/include/c++/8/bits/basic_string.h:220: 	if (!_M_is_local())
 	leaq	48(%rsp), %rax	#, tmp255
 	cmpq	%rax, %rdi	# tmp255, _102
@@ -1740,7 +1740,7 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 .LEHE19:
 .L168:
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
-	movq	32(%rsp), %rdi	# D.87351._M_dataplus._M_p, _20
+	movq	32(%rsp), %rdi	# D.87363._M_dataplus._M_p, _20
 # /usr/include/c++/8/bits/basic_string.h:220: 	if (!_M_is_local())
 	leaq	48(%rsp), %rax	#, tmp261
 	cmpq	%rax, %rdi	# tmp261, _20
@@ -1815,7 +1815,7 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 	.cfi_restore_state
 	movq	%rax, %rbx	#, tmp279
 # /usr/include/c++/8/bits/basic_string.h:176:       { return _M_dataplus._M_p; }
-	movq	32(%rsp), %rdi	# D.87351._M_dataplus._M_p, _21
+	movq	32(%rsp), %rdi	# D.87363._M_dataplus._M_p, _21
 # /usr/include/c++/8/bits/basic_string.h:220: 	if (!_M_is_local())
 	leaq	48(%rsp), %rax	#, tmp278
 	cmpq	%rax, %rdi	# tmp278, _21
@@ -1892,52 +1892,58 @@ main:
 	.cfi_startproc
 	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
 	.cfi_lsda 0x1b,.LLSDA3977
-	pushq	%rbp	#
+	pushq	%r13	#
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	pushq	%rbx	#
+	.cfi_offset 13, -16
+	pushq	%r12	#
 	.cfi_def_cfa_offset 24
-	.cfi_offset 3, -24
+	.cfi_offset 12, -24
+	pushq	%rbp	#
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx	#
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
 	subq	$56, %rsp	#,
-	.cfi_def_cfa_offset 80
-# 6_3_2.cpp:38:     auto testees = makeRandomPairs(howmany);
-	leaq	16(%rsp), %rdi	#, tmp159
+	.cfi_def_cfa_offset 96
+# 6_3_3.cpp:38:     auto testees = makeRandomPairs(howmany);
+	leaq	16(%rsp), %rdi	#, tmp203
 	movl	$20000000, %esi	#,
 .LEHB20:
 	call	_Z15makeRandomPairsi	#
 .LEHE20:
 # 5_refactored_allcaches.cpp:93:         explicit GF2(Rep __rep=0): rep{__rep} {}
 	movb	$1, 15(%rsp)	#, sum.rep
-	movq	16(%rsp), %rdx	# testees.D.81322._M_impl._M_start, ivtmp.148
-	leaq	20000000(%rdx), %rdi	#, _134
+	movq	16(%rsp), %rdx	# testees.D.81322._M_impl._M_start, ivtmp.164
+	leaq	20000000(%rdx), %rdi	#, _202
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rsi	#, tmp161
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rsi	#, tmp205
 .L170:
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
 	movzbl	15(%rsp), %eax	# sum.rep, sum.rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	salq	$8, %rax	#, tmp162
-	addq	%rsi, %rax	# tmp161, tmp163
+	salq	$8, %rax	#, tmp206
+	addq	%rsi, %rax	# tmp205, tmp207
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rdx), %ecx	# MEM[base: _132, offset: 0B], MEM[base: _132, offset: 0B]
+	movzbl	(%rdx), %ecx	# MEM[base: _200, offset: 0B], MEM[base: _200, offset: 0B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rax,%rcx), %eax	# MEM[(const value_type &)_23], tmp165
-	movb	%al, 15(%rsp)	# tmp165, sum.rep
-	addq	$1, %rdx	#, ivtmp.148
-# 6_3_2.cpp:41:     for(size_t i=0;i<howmany;i++){
-	cmpq	%rdi, %rdx	# _134, ivtmp.148
+	movzbl	(%rax,%rcx), %eax	# MEM[(const value_type &)_33], tmp209
+	movb	%al, 15(%rsp)	# tmp209, sum.rep
+	addq	$1, %rdx	#, ivtmp.164
+# 6_3_3.cpp:41:     for(size_t i=0;i<howmany;i++){
+	cmpq	%rdi, %rdx	# _202, ivtmp.164
 	jne	.L170	#,
 # /usr/include/c++/8/ostream:562: 			 static_cast<streamsize>(_Traits::length(__s)));
 	leaq	.LC4(%rip), %rdi	#,
 	call	_ZNSt11char_traitsIcE6lengthEPKc	#
 # /usr/include/c++/8/ostream:561: 	__ostream_insert(__out, __s,
-	movq	%rax, %rdx	# _37,
+	movq	%rax, %rdx	# _45,
 	leaq	.LC4(%rip), %rsi	#,
 	leaq	_ZSt4cout(%rip), %rdi	#,
 .LEHB21:
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT	#
 # 5_refactored_allcaches.cpp:124:         x.print(out); return out;
-	leaq	15(%rsp), %rdi	#, tmp166
+	leaq	15(%rsp), %rdi	#, tmp210
 	leaq	_ZSt4cout(%rip), %rsi	#,
 	call	_ZNK7GF2Five3GF2ILi285EE5printERSo	#
 # /usr/include/c++/8/ostream:113: 	return __pf(*this);
@@ -1945,100 +1951,165 @@ main:
 	call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@PLT	#
 # 5_refactored_allcaches.cpp:93:         explicit GF2(Rep __rep=0): rep{__rep} {}
 	movb	$1, 14(%rsp)	#, sum1.rep
-# 6_3_2.cpp:51:     auto aa = system_clock::now();
+# 6_3_3.cpp:56:     auto aa = system_clock::now();
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT	#
 	movq	%rax, %rbx	#, aa
-	movq	16(%rsp), %rsi	# testees.D.81322._M_impl._M_start, ivtmp.141
-	leaq	20000000(%rsi), %r9	#, _128
+	movq	16(%rsp), %rax	# testees.D.81322._M_impl._M_start, ivtmp.157
+	leaq	20000000(%rax), %r12	#, _196
 # 5_refactored_allcaches.cpp:93:         explicit GF2(Rep __rep=0): rep{__rep} {}
-	movl	$1, %edx	#, sum3$rep
-	movl	$1, %ecx	#, sum2$rep
-	movl	$1, %eax	#, sum4$rep
-    movl    $1, %r11d   #, sum1$rep(temp)
+	movl	$1, %esi	#, sum6$rep
+	movl	$1, %edi	#, sum5$rep
+	movl	$1, %ecx	#, sum7$rep
+	movl	$1, %r9d	#, sum3$rep
+	movl	$1, %r10d	#, sum2$rep
+	movl	$1, %edx	#, sum8$rep
+	movl	$1, %r8d	#, sum4$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi	#, tmp168
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %r11	#, tmp212
 .L171:
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	%r11b, %r8d	# sum1.rep, sum1.rep
+	movzbl	14(%rsp), %ebp	# sum1.rep, sum1.rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	salq	$8, %r8	#, tmp169
-	addq	%rdi, %r8	# tmp168, tmp170
+	salq	$8, %rbp	#, tmp213
+	addq	%r11, %rbp	# tmp212, tmp214
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rsi), %r10d	# MEM[base: _112, offset: 0B], MEM[base: _112, offset: 0B]
+	movzbl	(%rax), %r13d	# MEM[base: _168, offset: 0B], MEM[base: _168, offset: 0B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%r8,%r10), %r8d	# MEM[(const value_type &)_59], _62
-	movb	%r8b, %r11b	# _62, sum1.rep
+	movzbl	0(%rbp,%r13), %ebp	# MEM[(const value_type &)_91], _94
+	movb	%bpl, 14(%rsp)	# _94, sum1.rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	%cl, %ecx	# sum2$rep, sum2$rep
+	movzbl	%r10b, %r10d	# sum2$rep, sum2$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	salq	$8, %rcx	#, tmp174
-	addq	%rdi, %rcx	# tmp168, tmp175
+	salq	$8, %r10	#, tmp218
+	addq	%r11, %r10	# tmp212, tmp219
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	1(%rsi), %r10d	# MEM[base: _112, offset: 1B], MEM[base: _112, offset: 1B]
+	movzbl	1(%rax), %r13d	# MEM[base: _168, offset: 1B], MEM[base: _168, offset: 1B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rcx,%r10), %ecx	# MEM[(const value_type &)_52], sum2$rep
+	movzbl	(%r10,%r13), %r10d	# MEM[(const value_type &)_84], sum2$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	%dl, %edx	# sum3$rep, sum3$rep
+	movzbl	%r9b, %r9d	# sum3$rep, sum3$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	salq	$8, %rdx	#, tmp179
-	addq	%rdi, %rdx	# tmp168, tmp180
+	salq	$8, %r9	#, tmp223
+	addq	%r11, %r9	# tmp212, tmp224
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	2(%rsi), %r10d	# MEM[base: _112, offset: 2B], MEM[base: _112, offset: 2B]
+	movzbl	2(%rax), %r13d	# MEM[base: _168, offset: 2B], MEM[base: _168, offset: 2B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rdx,%r10), %edx	# MEM[(const value_type &)_46], sum3$rep
+	movzbl	(%r9,%r13), %r9d	# MEM[(const value_type &)_78], sum3$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	%al, %eax	# sum4$rep, sum4$rep
+	movzbl	%r8b, %r8d	# sum4$rep, sum4$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	salq	$8, %rax	#, tmp184
-	addq	%rdi, %rax	# tmp168, tmp185
+	salq	$8, %r8	#, tmp228
+	addq	%r11, %r8	# tmp212, tmp229
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	3(%rsi), %r10d	# MEM[base: _112, offset: 3B], MEM[base: _112, offset: 3B]
+	movzbl	3(%rax), %r13d	# MEM[base: _168, offset: 3B], MEM[base: _168, offset: 3B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	(%rax,%r10), %eax	# MEM[(const value_type &)_40], sum4$rep
-	addq	$4, %rsi	#, ivtmp.141
-# 6_3_2.cpp:52:     for(size_t i=0;i<howmany;i+=4){
-	cmpq	%r9, %rsi	# _128, ivtmp.141
+	movzbl	(%r8,%r13), %r8d	# MEM[(const value_type &)_72], sum4$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	%dil, %edi	# sum5$rep, sum5$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	salq	$8, %rdi	#, tmp233
+	addq	%r11, %rdi	# tmp212, tmp234
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	4(%rax), %r13d	# MEM[base: _168, offset: 4B], MEM[base: _168, offset: 4B]
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	(%rdi,%r13), %edi	# MEM[(const value_type &)_66], sum5$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	%sil, %esi	# sum6$rep, sum6$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	salq	$8, %rsi	#, tmp238
+	addq	%r11, %rsi	# tmp212, tmp239
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	5(%rax), %r13d	# MEM[base: _168, offset: 5B], MEM[base: _168, offset: 5B]
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	(%rsi,%r13), %esi	# MEM[(const value_type &)_60], sum6$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	%cl, %ecx	# sum7$rep, sum7$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	salq	$8, %rcx	#, tmp243
+	addq	%r11, %rcx	# tmp212, tmp244
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	6(%rax), %r13d	# MEM[base: _168, offset: 6B], MEM[base: _168, offset: 6B]
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	(%rcx,%r13), %ecx	# MEM[(const value_type &)_54], sum7$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	%dl, %edx	# sum8$rep, sum8$rep
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	salq	$8, %rdx	#, tmp248
+	addq	%r11, %rdx	# tmp212, tmp249
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	7(%rax), %r13d	# MEM[base: _168, offset: 7B], MEM[base: _168, offset: 7B]
+# 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
+	movzbl	(%rdx,%r13), %edx	# MEM[(const value_type &)_48], sum8$rep
+	addq	$8, %rax	#, ivtmp.157
+# 6_3_3.cpp:57:     for(size_t i=0;i<howmany;i+=8){
+	cmpq	%r12, %rax	# _196, ivtmp.157
 	jne	.L171	#,
-# We need to move sum$rep(temp) on r11 to actual location in memory - actually, code will probably work fine without this.
-    movb    %r11b, 14(%rsp) #...and now the rest can stay unmodified.
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	%r8b, %r8d	# _62, _62
+	movzbl	%bpl, %ebp	# _94, _94
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi	#, tmp188
-	salq	$8, %r8	#, tmp189
-	leaq	(%rdi,%r8), %rsi	#, tmp190
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %r11	#, tmp252
+	salq	$8, %rbp	#, tmp253
+	leaq	(%r11,%rbp), %rax	#, tmp254
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	%cl, %ecx	# sum2$rep, sum2$rep
+	movzbl	%r10b, %r10d	# sum2$rep, sum2$rep
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	(%rsi,%rcx), %ecx	# MEM[(const value_type &)_77], tmp192
+	movzbl	(%rax,%r10), %eax	# MEM[(const value_type &)_125], tmp256
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	salq	$8, %rcx	#, tmp194
-	addq	%rdi, %rcx	# tmp188, tmp195
+	salq	$8, %rax	#, tmp258
+	addq	%r11, %rax	# tmp252, tmp259
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	%dl, %edx	# sum3$rep, sum3$rep
+	movzbl	%r9b, %r9d	# sum3$rep, sum3$rep
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	(%rcx,%rdx), %edx	# MEM[(const value_type &)_72], tmp197
+	movzbl	(%rax,%r9), %eax	# MEM[(const value_type &)_120], tmp261
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	salq	$8, %rdx	#, tmp199
-	addq	%rdx, %rdi	# tmp199, tmp200
+	salq	$8, %rax	#, tmp263
+	addq	%r11, %rax	# tmp252, tmp264
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
-	movzbl	%al, %eax	# sum4$rep, sum4$rep
-# 6_3_2.cpp:59:     sum1 = sum1*sum2*sum3*sum4;
-	movzbl	(%rdi,%rax), %eax	# MEM[(const value_type &)_68], tmp202
-	movb	%al, 14(%rsp)	# tmp202, MEM[(struct GF2 *)&sum1]
-# 6_3_2.cpp:60:     auto bb = system_clock::now();
+	movzbl	%r8b, %r8d	# sum4$rep, sum4$rep
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	(%rax,%r8), %eax	# MEM[(const value_type &)_116], tmp266
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	salq	$8, %rax	#, tmp268
+	addq	%r11, %rax	# tmp252, tmp269
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	%dil, %edi	# sum5$rep, sum5$rep
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	(%rax,%rdi), %eax	# MEM[(const value_type &)_112], tmp271
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	salq	$8, %rax	#, tmp273
+	addq	%r11, %rax	# tmp252, tmp274
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	%sil, %esi	# sum6$rep, sum6$rep
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	(%rax,%rsi), %eax	# MEM[(const value_type &)_108], tmp276
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	salq	$8, %rax	#, tmp278
+	addq	%r11, %rax	# tmp252, tmp279
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	%cl, %ecx	# sum7$rep, sum7$rep
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	(%rax,%rcx), %eax	# MEM[(const value_type &)_104], tmp281
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	salq	$8, %rax	#, tmp283
+	addq	%rax, %r11	# tmp283, tmp284
+# 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
+	movzbl	%dl, %edx	# sum8$rep, sum8$rep
+# 6_3_3.cpp:69:     sum1 = sum1*sum2*sum3*sum4*sum5*sum6*sum7*sum8;
+	movzbl	(%r11,%rdx), %eax	# MEM[(const value_type &)_100], tmp286
+	movb	%al, 14(%rsp)	# tmp286, MEM[(struct GF2 *)&sum1]
+# 6_3_3.cpp:70:     auto bb = system_clock::now();
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT	#
 	movq	%rax, %rbp	#, bb
 # /usr/include/c++/8/ostream:562: 			 static_cast<streamsize>(_Traits::length(__s)));
 	leaq	.LC5(%rip), %rdi	#,
 	call	_ZNSt11char_traitsIcE6lengthEPKc	#
 # /usr/include/c++/8/ostream:561: 	__ostream_insert(__out, __s,
-	movq	%rax, %rdx	# _65,
+	movq	%rax, %rdx	# _97,
 	leaq	.LC5(%rip), %rsi	#,
 	leaq	_ZSt4cout(%rip), %rdi	#,
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT	#
 # 5_refactored_allcaches.cpp:124:         x.print(out); return out;
-	leaq	14(%rsp), %rdi	#, tmp203
+	leaq	14(%rsp), %rdi	#, tmp287
 	leaq	_ZSt4cout(%rip), %rsi	#,
 	call	_ZNK7GF2Five3GF2ILi285EE5printERSo	#
 # /usr/include/c++/8/ostream:113: 	return __pf(*this);
@@ -2048,59 +2119,63 @@ main:
 	movq	%rbp, %rcx	# bb, bb
 	subq	%rbx, %rcx	# aa, bb
 # /usr/include/c++/8/chrono:155: 	      static_cast<_CR>(__d.count()) / static_cast<_CR>(_CF::den)));
-	movabsq	$2361183241434822607, %rdx	#, tmp207
-	movq	%rcx, %rax	# tmp204, tmp212
-	imulq	%rdx	# tmp207
-	sarq	$7, %rdx	#, tmp208
-	sarq	$63, %rcx	#, tmp209
-	movq	%rdx, %rsi	# tmp208, tmp208
-	subq	%rcx, %rsi	# tmp209, tmp208
+	movabsq	$2361183241434822607, %rdx	#, tmp291
+	movq	%rcx, %rax	# tmp288, tmp296
+	imulq	%rdx	# tmp291
+	sarq	$7, %rdx	#, tmp292
+	sarq	$63, %rcx	#, tmp293
+	movq	%rdx, %rsi	# tmp292, tmp292
+	subq	%rcx, %rsi	# tmp293, tmp292
 # /usr/include/c++/8/ostream:167:       { return _M_insert(__n); }
 	leaq	_ZSt4cout(%rip), %rdi	#,
 	call	_ZNSo9_M_insertIlEERSoT_@PLT	#
-	movq	%rax, %rbx	#, _80
+	movq	%rax, %rbx	#, _128
 # /usr/include/c++/8/ostream:562: 			 static_cast<streamsize>(_Traits::length(__s)));
 	leaq	.LC6(%rip), %rdi	#,
 	call	_ZNSt11char_traitsIcE6lengthEPKc	#
 # /usr/include/c++/8/ostream:561: 	__ostream_insert(__out, __s,
-	movq	%rax, %rdx	# _85,
+	movq	%rax, %rdx	# _133,
 	leaq	.LC6(%rip), %rsi	#,
-	movq	%rbx, %rdi	# _80,
+	movq	%rbx, %rdi	# _128,
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT	#
 # /usr/include/c++/8/ostream:113: 	return __pf(*this);
-	movq	%rbx, %rdi	# _80,
+	movq	%rbx, %rdi	# _128,
 	call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@PLT	#
 .LEHE21:
 # /usr/include/c++/8/bits/stl_vector.h:567: 	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
-	movq	16(%rsp), %rdi	# testees.D.81322._M_impl._M_start, _87
+	movq	16(%rsp), %rdi	# testees.D.81322._M_impl._M_start, _135
 # /usr/include/c++/8/bits/stl_vector.h:303: 	if (__p)
-	testq	%rdi, %rdi	# _87
+	testq	%rdi, %rdi	# _135
 	je	.L176	#,
 # /usr/include/c++/8/ext/new_allocator.h:125: 	::operator delete(__p);
 	call	_ZdlPv@PLT	#
 .L176:
-# 6_3_2.cpp:63: }
+# 6_3_3.cpp:73: }
 	movl	$0, %eax	#,
 	addq	$56, %rsp	#,
 	.cfi_remember_state
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 40
 	popq	%rbx	#
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 32
 	popq	%rbp	#
+	.cfi_def_cfa_offset 24
+	popq	%r12	#
+	.cfi_def_cfa_offset 16
+	popq	%r13	#
 	.cfi_def_cfa_offset 8
 	ret	
 .L175:
 	.cfi_restore_state
-	movq	%rax, %rbx	#, tmp211
+	movq	%rax, %rbx	#, tmp295
 # /usr/include/c++/8/bits/stl_vector.h:567: 	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
-	movq	16(%rsp), %rdi	# testees.D.81322._M_impl._M_start, _88
+	movq	16(%rsp), %rdi	# testees.D.81322._M_impl._M_start, _136
 # /usr/include/c++/8/bits/stl_vector.h:303: 	if (__p)
-	testq	%rdi, %rdi	# _88
+	testq	%rdi, %rdi	# _136
 	je	.L174	#,
 # /usr/include/c++/8/ext/new_allocator.h:125: 	::operator delete(__p);
 	call	_ZdlPv@PLT	#
 .L174:
-	movq	%rbx, %rdi	# tmp211,
+	movq	%rbx, %rdi	# tmp295,
 .LEHB22:
 	call	_Unwind_Resume@PLT	#
 .LEHE22:
@@ -2141,7 +2216,7 @@ _GLOBAL__sub_I__Z14makeRandomIntsi:
 	leaq	_ZStL8__ioinit(%rip), %rsi	#,
 	movq	_ZNSt8ios_base4InitD1Ev@GOTPCREL(%rip), %rdi	#,
 	call	__cxa_atexit@PLT	#
-# 6_3_2.cpp:63: }
+# 6_3_3.cpp:73: }
 	addq	$8, %rsp	#,
 	.cfi_def_cfa_offset 8
 	ret	

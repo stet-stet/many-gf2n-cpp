@@ -247,4 +247,7 @@ And loop condition checking runs 5M times instead of 20M.
 ## Conclusion
 
 Inlining helped much in decreasing the total time taken, but is insufficient in explaining why the "unrolled" loop should run 4x faster with O1 flag.
+Thus, I wrote [this question](https://stackoverflow.com/questions/67517624/33-less-instructions-17-less-mem-access-but-4x-as-fast) in stackoverflow: the consensus from the comments are that out-of-order dynamic dispatch should be involved.
+
+
 

@@ -69,11 +69,20 @@ The addition results are printed because calculation is sometimes omitted entire
 
 * I would like to enable only inlining and run code again, but activating only a few (instead of whole `O1`) does not seem to work well - I get a link error.
 
-## Experiment Set 2-1 (Identify the factor could explain the 4x difference in execution speed in Exp.Set 2)
+## Experiment Set 2-1 (Identify the factor responsible for the 4x difference)
 
 * Initial guess: the two measurements affect each other in some way
 * I switched the order of execution, this has little to no effect on anything: see `6_3_betterbenchmark.cpp`
   * The two measurements are pretty much independent!
 * Another guess: Instruction-level parallelism?
 * Another guess: Better exploitation of the memory hierarchy?
-* Actually, I might need some input from experts: let's ask some friends.
+* None of these make logical sense(see the stackoverflow question I wrote below)
+* Actually, I might need some input:
+  * [Stackoverflow!](https://stackoverflow.com/questions/67517624/33-less-instructions-17-less-mem-access-but-4x-as-fast)
+  * Consensus from the comments is that out-of-order dynamic dispatch should be involved.
+
+## Experiment Set 2-2 (Gather convincing evidence for/against the OoO hypothesis)
+
+* See `6_3_*.cpp`s, compile with `-O1` flag, run them: their performances saturate on `6_3_3.cpp`, which unrolls the loop by a factor of 8.
+
+## Experiment Set 3 (modify assembly a tiny bit, reassemble, link, execute)

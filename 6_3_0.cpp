@@ -44,15 +44,13 @@ int main(){
     cout << "actual result of multiplication is:" << sum << endl;
 
     GF2 sum1 {GF2(1)};
-    GF2 sum2 {GF2(1)};
 
     auto aa = system_clock::now();
-    for(size_t i=0;i<howmany;i+=2){
+    for(size_t i=0;i<howmany;i++){
         sum1 *= testees[i];
-        sum2 *= testees[i+1];
     }
 
-    sum1 = sum1*sum2;;
+    sum1 = sum1;
     auto bb = system_clock::now();
     cout << "result(should be the same as above): " << sum1 << endl;
     cout << duration_cast<microseconds>(bb-aa).count() << " us (loop unrolled manually)" << endl;

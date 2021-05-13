@@ -1954,12 +1954,11 @@ main:
 	movl	$1, %edx	#, sum3$rep
 	movl	$1, %ecx	#, sum2$rep
 	movl	$1, %eax	#, sum4$rep
-    movl    $1, %r11d   #, sum1$rep(temp)
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
 	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi	#, tmp168
 .L171:
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
-	movzbl	%r11b, %r8d	# sum1.rep, sum1.rep
+	movzbl	14(%rsp), %r8d	# sum1.rep, sum1.rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
 	salq	$8, %r8	#, tmp169
 	addq	%rdi, %r8	# tmp168, tmp170
@@ -1967,7 +1966,7 @@ main:
 	movzbl	(%rsi), %r10d	# MEM[base: _112, offset: 0B], MEM[base: _112, offset: 0B]
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
 	movzbl	(%r8,%r10), %r8d	# MEM[(const value_type &)_59], _62
-	movb	%r8b, %r11b	# _62, sum1.rep
+	movb	%r8b, 14(%rsp)	# _62, sum1.rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
 	movzbl	%cl, %ecx	# sum2$rep, sum2$rep
 # 5_refactored_allcaches.cpp:109:             rep = multTable[rep][other.rep]; return *this;
@@ -1999,8 +1998,6 @@ main:
 # 6_3_2.cpp:52:     for(size_t i=0;i<howmany;i+=4){
 	cmpq	%r9, %rsi	# _128, ivtmp.141
 	jne	.L171	#,
-# We need to move sum$rep(temp) on r11 to actual location in memory - actually, code will probably work fine without this.
-    movb    %r11b, 14(%rsp) #...and now the rest can stay unmodified.
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);
 	movzbl	%r8b, %r8d	# _62, _62
 # 5_refactored_allcaches.cpp:99:             return GF2(multTable[rep][other.rep]);

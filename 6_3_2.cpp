@@ -36,6 +36,12 @@ auto makeRandomPairs(int howmany){
 int main(){
     int howmany = 20000000;
     auto testees = makeRandomPairs(howmany);
+    
+    GF2 sum {GF2(1)};
+    for(size_t i=0;i<howmany;i++){
+        sum *= testees[i];
+    }
+    cout << "actual result of multiplication is:" << sum << endl;
 
     GF2 sum1 {GF2(1)};
     GF2 sum2 {GF2(1)};
