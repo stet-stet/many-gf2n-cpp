@@ -76,5 +76,4 @@ The addition results are printed because calculation is sometimes omitted entire
   * The two measurements are pretty much independent!
 * Another guess: Instruction-level parallelism?
 * Another guess: Better exploitation of the memory hierarchy?
-
-
+* Actually, I might need some input from experts: let's ask some friends.
