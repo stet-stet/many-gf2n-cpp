@@ -1,0 +1,460 @@
+
+[0] Code Region - mainloop3
+
+Iterations:        200
+Instructions:      8800
+Total Cycles:      2212
+Total uOps:        8800
+
+Dispatch Width:    4
+uOps Per Cycle:    3.98
+IPC:               3.98
+Block RThroughput: 11.0
+
+
+Instruction Info:
+[1]: #uOps
+[2]: Latency
+[3]: RThroughput
+[4]: MayLoad
+[5]: MayStore
+[6]: HasSideEffects (U)
+
+[1]    [2]    [3]    [4]    [5]    [6]    Instructions:
+ 1      5     0.50    *                   movzbl	14(%rsp), %ebp
+ 1      1     0.50                        shlq	$8, %rbp
+ 1      1     0.25                        addq	%r11, %rbp
+ 1      5     0.50    *                   movzbl	(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%rbp,%r13), %ebp
+ 1      1     1.00           *            movb	%bpl, 14(%rsp)
+ 1      1     0.25                        movzbl	%r10b, %r10d
+ 1      1     0.50                        shlq	$8, %r10
+ 1      1     0.25                        addq	%r11, %r10
+ 1      5     0.50    *                   movzbl	1(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%r10,%r13), %r10d
+ 1      1     0.25                        movzbl	%r9b, %r9d
+ 1      1     0.50                        shlq	$8, %r9
+ 1      1     0.25                        addq	%r11, %r9
+ 1      5     0.50    *                   movzbl	2(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%r9,%r13), %r9d
+ 1      1     0.25                        movzbl	%r8b, %r8d
+ 1      1     0.50                        shlq	$8, %r8
+ 1      1     0.25                        addq	%r11, %r8
+ 1      5     0.50    *                   movzbl	3(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%r8,%r13), %r8d
+ 1      1     0.25                        movzbl	%dil, %edi
+ 1      1     0.50                        shlq	$8, %rdi
+ 1      1     0.25                        addq	%r11, %rdi
+ 1      5     0.50    *                   movzbl	4(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%rdi,%r13), %edi
+ 1      1     0.25                        movzbl	%sil, %esi
+ 1      1     0.50                        shlq	$8, %rsi
+ 1      1     0.25                        addq	%r11, %rsi
+ 1      5     0.50    *                   movzbl	5(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%rsi,%r13), %esi
+ 1      1     0.25                        movzbl	%cl, %ecx
+ 1      1     0.50                        shlq	$8, %rcx
+ 1      1     0.25                        addq	%r11, %rcx
+ 1      5     0.50    *                   movzbl	6(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%rcx,%r13), %ecx
+ 1      1     0.25                        movzbl	%dl, %edx
+ 1      1     0.50                        shlq	$8, %rdx
+ 1      1     0.25                        addq	%r11, %rdx
+ 1      5     0.50    *                   movzbl	7(%rax), %r13d
+ 1      5     0.50    *                   movzbl	(%rdx,%r13), %edx
+ 1      1     0.25                        addq	$8, %rax
+ 1      1     0.25                        cmpq	%r12, %rax
+ 1      1     0.50                        jne	.L171
+
+
+Resources:
+[0]   - BWDivider
+[1]   - BWFPDivider
+[2]   - BWPort0
+[3]   - BWPort1
+[4]   - BWPort2
+[5]   - BWPort3
+[6]   - BWPort4
+[7]   - BWPort5
+[8]   - BWPort6
+[9]   - BWPort7
+
+
+Resource pressure per iteration:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    
+ -      -     6.50   6.50   8.50   8.50   1.00   6.50   6.50   1.00   
+
+Resource pressure by instruction:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    Instructions:
+ -      -      -      -     0.50   0.51    -      -      -      -     movzbl	14(%rsp), %ebp
+ -      -     1.00    -      -      -      -      -      -      -     shlq	$8, %rbp
+ -      -      -     1.00    -      -      -      -      -      -     addq	%r11, %rbp
+ -      -      -      -     0.51   0.50    -      -      -      -     movzbl	(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%rbp,%r13), %ebp
+ -      -      -      -      -      -     1.00    -      -     1.00   movb	%bpl, 14(%rsp)
+ -      -      -      -      -      -      -     0.50   0.50    -     movzbl	%r10b, %r10d
+ -      -     0.50    -      -      -      -      -     0.50    -     shlq	$8, %r10
+ -      -      -     0.50    -      -      -     0.50    -      -     addq	%r11, %r10
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	1(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%r10,%r13), %r10d
+ -      -      -     0.50    -      -      -     0.50    -      -     movzbl	%r9b, %r9d
+ -      -     0.50    -      -      -      -      -     0.50    -     shlq	$8, %r9
+ -      -      -     0.50    -      -      -     0.50    -      -     addq	%r11, %r9
+ -      -      -      -     0.51   0.50    -      -      -      -     movzbl	2(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%r9,%r13), %r9d
+ -      -      -     0.50    -      -      -      -     0.50    -     movzbl	%r8b, %r8d
+ -      -      -      -      -      -      -      -     1.00    -     shlq	$8, %r8
+ -      -     0.50    -      -      -      -     0.50    -      -     addq	%r11, %r8
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	3(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%r8,%r13), %r8d
+ -      -      -      -      -      -      -     1.00    -      -     movzbl	%dil, %edi
+ -      -     0.50    -      -      -      -      -     0.50    -     shlq	$8, %rdi
+ -      -      -     0.51    -      -      -     0.50    -      -     addq	%r11, %rdi
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	4(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%rdi,%r13), %edi
+ -      -      -     0.50    -      -      -     0.01   0.50    -     movzbl	%sil, %esi
+ -      -     1.00    -      -      -      -      -      -      -     shlq	$8, %rsi
+ -      -      -     0.50    -      -      -     0.50    -      -     addq	%r11, %rsi
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	5(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%rsi,%r13), %esi
+ -      -      -      -      -      -      -     0.50   0.50    -     movzbl	%cl, %ecx
+ -      -     0.50    -      -      -      -      -     0.50    -     shlq	$8, %rcx
+ -      -      -     0.51    -      -      -      -     0.50    -     addq	%r11, %rcx
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	6(%rax), %r13d
+ -      -      -      -     0.50   0.51    -      -      -      -     movzbl	(%rcx,%r13), %ecx
+ -      -      -     0.50    -      -      -     0.50   0.01    -     movzbl	%dl, %edx
+ -      -     1.00    -      -      -      -      -      -      -     shlq	$8, %rdx
+ -      -      -     0.50    -      -      -     0.50    -      -     addq	%r11, %rdx
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	7(%rax), %r13d
+ -      -      -      -     0.50   0.50    -      -      -      -     movzbl	(%rdx,%r13), %edx
+ -      -      -      -      -      -      -     0.50   0.50    -     addq	$8, %rax
+ -      -      -     0.50    -      -      -      -     0.50    -     cmpq	%r12, %rax
+ -      -     1.00    -      -      -      -      -      -      -     jne	.L171
+
+
+Timeline view:
+                    0123456789          0123456789          0123456789          0123456789
+Index     0123456789          0123456789          0123456789          0123456789          
+
+[0,0]     DeeeeeER  .    .    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	14(%rsp), %ebp
+[0,1]     D=====eER .    .    .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rbp
+[0,2]     D======eER.    .    .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rbp
+[0,3]     DeeeeeE--R.    .    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rax), %r13d
+[0,4]     .D======eeeeeER.    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rbp,%r13), %ebp
+[0,5]     .D===========eER    .    .    .    .    .    .    .    .    .    .    .    .   .   movb	%bpl, 14(%rsp)
+[0,6]     .DeE-----------R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%r10b, %r10d
+[0,7]     .D=eE----------R    .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r10
+[0,8]     . D=eE---------R    .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r10
+[0,9]     . DeeeeeE------R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	1(%rax), %r13d
+[0,10]    . D=====eeeeeE-R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r10,%r13), %r10d
+[0,11]    . DeE----------R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%r9b, %r9d
+[0,12]    .  DeE---------R    .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r9
+[0,13]    .  D=eE--------R    .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r9
+[0,14]    .  DeeeeeE-----R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	2(%rax), %r13d
+[0,15]    .  D=====eeeeeER    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r9,%r13), %r9d
+[0,16]    .   DeE--------R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%r8b, %r8d
+[0,17]    .   D=eE-------R    .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r8
+[0,18]    .   D==eE------R    .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r8
+[0,19]    .   DeeeeeE----R    .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	3(%rax), %r13d
+[0,20]    .    D====eeeeeER   .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r8,%r13), %r8d
+[0,21]    .    DeE--------R   .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%dil, %edi
+[0,22]    .    D=eE-------R   .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rdi
+[0,23]    .    D==eE------R   .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rdi
+[0,24]    .    .DeeeeeE---R   .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	4(%rax), %r13d
+[0,25]    .    .D=====eeeeeER .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rdi,%r13), %edi
+[0,26]    .    .DeE---------R .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%sil, %esi
+[0,27]    .    .D=eE--------R .    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rsi
+[0,28]    .    . D=eE-------R .    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rsi
+[0,29]    .    . D=eeeeeE---R .    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	5(%rax), %r13d
+[0,30]    .    . D======eeeeeER    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rsi,%r13), %esi
+[0,31]    .    . DeE----------R    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%cl, %ecx
+[0,32]    .    .  DeE---------R    .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rcx
+[0,33]    .    .  D=eE--------R    .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rcx
+[0,34]    .    .  D=eeeeeE----R    .    .    .    .    .    .    .    .    .    .    .   .   movzbl	6(%rax), %r13d
+[0,35]    .    .  D======eeeeeER   .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rcx,%r13), %ecx
+[0,36]    .    .   DeE---------R   .    .    .    .    .    .    .    .    .    .    .   .   movzbl	%dl, %edx
+[0,37]    .    .   D=eE--------R   .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rdx
+[0,38]    .    .   D==eE-------R   .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rdx
+[0,39]    .    .   D=eeeeeE----R   .    .    .    .    .    .    .    .    .    .    .   .   movzbl	7(%rax), %r13d
+[0,40]    .    .    D=====eeeeeER  .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rdx,%r13), %edx
+[0,41]    .    .    DeE---------R  .    .    .    .    .    .    .    .    .    .    .   .   addq	$8, %rax
+[0,42]    .    .    D=eE--------R  .    .    .    .    .    .    .    .    .    .    .   .   cmpq	%r12, %rax
+[0,43]    .    .    D==eE-------R  .    .    .    .    .    .    .    .    .    .    .   .   jne	.L171
+[1,0]     .    .    .DeeeeeE----R  .    .    .    .    .    .    .    .    .    .    .   .   movzbl	14(%rsp), %ebp
+[1,1]     .    .    .D=====eE---R  .    .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rbp
+[1,2]     .    .    .D======eE--R  .    .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rbp
+[1,3]     .    .    .D=eeeeeE---R  .    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rax), %r13d
+[1,4]     .    .    . D======eeeeeER    .    .    .    .    .    .    .    .    .    .   .   movzbl	(%rbp,%r13), %ebp
+[1,5]     .    .    . D===========eER   .    .    .    .    .    .    .    .    .    .   .   movb	%bpl, 14(%rsp)
+[1,6]     .    .    . DeE-----------R   .    .    .    .    .    .    .    .    .    .   .   movzbl	%r10b, %r10d
+[1,7]     .    .    . D=eE----------R   .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r10
+[1,8]     .    .    .  D=eE---------R   .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r10
+[1,9]     .    .    .  DeeeeeE------R   .    .    .    .    .    .    .    .    .    .   .   movzbl	1(%rax), %r13d
+[1,10]    .    .    .  D=====eeeeeE-R   .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r10,%r13), %r10d
+[1,11]    .    .    .  DeE----------R   .    .    .    .    .    .    .    .    .    .   .   movzbl	%r9b, %r9d
+[1,12]    .    .    .   DeE---------R   .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r9
+[1,13]    .    .    .   D=eE--------R   .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r9
+[1,14]    .    .    .   DeeeeeE-----R   .    .    .    .    .    .    .    .    .    .   .   movzbl	2(%rax), %r13d
+[1,15]    .    .    .   D=====eeeeeER   .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r9,%r13), %r9d
+[1,16]    .    .    .    DeE--------R   .    .    .    .    .    .    .    .    .    .   .   movzbl	%r8b, %r8d
+[1,17]    .    .    .    D=eE-------R   .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %r8
+[1,18]    .    .    .    D==eE------R   .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %r8
+[1,19]    .    .    .    DeeeeeE----R   .    .    .    .    .    .    .    .    .    .   .   movzbl	3(%rax), %r13d
+[1,20]    .    .    .    .D====eeeeeER  .    .    .    .    .    .    .    .    .    .   .   movzbl	(%r8,%r13), %r8d
+[1,21]    .    .    .    .DeE--------R  .    .    .    .    .    .    .    .    .    .   .   movzbl	%dil, %edi
+[1,22]    .    .    .    .D=eE-------R  .    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rdi
+[1,23]    .    .    .    .D==eE------R  .    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rdi
+[1,24]    .    .    .    . DeeeeeE---R  .    .    .    .    .    .    .    .    .    .   .   movzbl	4(%rax), %r13d
+[1,25]    .    .    .    . D=====eeeeeER.    .    .    .    .    .    .    .    .    .   .   movzbl	(%rdi,%r13), %edi
+[1,26]    .    .    .    . D=eE--------R.    .    .    .    .    .    .    .    .    .   .   movzbl	%sil, %esi
+[1,27]    .    .    .    . D==eE-------R.    .    .    .    .    .    .    .    .    .   .   shlq	$8, %rsi
+[1,28]    .    .    .    .  D==eE------R.    .    .    .    .    .    .    .    .    .   .   addq	%r11, %rsi
+[1,29]    .    .    .    .  D=eeeeeE---R.    .    .    .    .    .    .    .    .    .   .   movzbl	5(%rax), %r13d
+[1,30]    .    .    .    .  D======eeeeeER   .    .    .    .    .    .    .    .    .   .   movzbl	(%rsi,%r13), %esi
+[1,31]    .    .    .    .  D=eE---------R   .    .    .    .    .    .    .    .    .   .   movzbl	%cl, %ecx
+[1,32]    .    .    .    .   D=eE--------R   .    .    .    .    .    .    .    .    .   .   shlq	$8, %rcx
+[1,33]    .    .    .    .   D==eE-------R   .    .    .    .    .    .    .    .    .   .   addq	%r11, %rcx
+[1,34]    .    .    .    .   D=eeeeeE----R   .    .    .    .    .    .    .    .    .   .   movzbl	6(%rax), %r13d
+[1,35]    .    .    .    .   D======eeeeeER  .    .    .    .    .    .    .    .    .   .   movzbl	(%rcx,%r13), %ecx
+[1,36]    .    .    .    .    DeE---------R  .    .    .    .    .    .    .    .    .   .   movzbl	%dl, %edx
+[1,37]    .    .    .    .    D=eE--------R  .    .    .    .    .    .    .    .    .   .   shlq	$8, %rdx
+[1,38]    .    .    .    .    D==eE-------R  .    .    .    .    .    .    .    .    .   .   addq	%r11, %rdx
+[1,39]    .    .    .    .    D=eeeeeE----R  .    .    .    .    .    .    .    .    .   .   movzbl	7(%rax), %r13d
+[1,40]    .    .    .    .    .D=====eeeeeER .    .    .    .    .    .    .    .    .   .   movzbl	(%rdx,%r13), %edx
+[1,41]    .    .    .    .    .DeE---------R .    .    .    .    .    .    .    .    .   .   addq	$8, %rax
+[1,42]    .    .    .    .    .D=eE--------R .    .    .    .    .    .    .    .    .   .   cmpq	%r12, %rax
+[1,43]    .    .    .    .    .D==eE-------R .    .    .    .    .    .    .    .    .   .   jne	.L171
+[2,0]     .    .    .    .    . DeeeeeE----R .    .    .    .    .    .    .    .    .   .   movzbl	14(%rsp), %ebp
+[2,1]     .    .    .    .    . D=====eE---R .    .    .    .    .    .    .    .    .   .   shlq	$8, %rbp
+[2,2]     .    .    .    .    . D======eE--R .    .    .    .    .    .    .    .    .   .   addq	%r11, %rbp
+[2,3]     .    .    .    .    . D=eeeeeE---R .    .    .    .    .    .    .    .    .   .   movzbl	(%rax), %r13d
+[2,4]     .    .    .    .    .  D======eeeeeER   .    .    .    .    .    .    .    .   .   movzbl	(%rbp,%r13), %ebp
+[2,5]     .    .    .    .    .  D===========eER  .    .    .    .    .    .    .    .   .   movb	%bpl, 14(%rsp)
+[2,6]     .    .    .    .    .  DeE-----------R  .    .    .    .    .    .    .    .   .   movzbl	%r10b, %r10d
+[2,7]     .    .    .    .    .  D=eE----------R  .    .    .    .    .    .    .    .   .   shlq	$8, %r10
+[2,8]     .    .    .    .    .   D=eE---------R  .    .    .    .    .    .    .    .   .   addq	%r11, %r10
+[2,9]     .    .    .    .    .   DeeeeeE------R  .    .    .    .    .    .    .    .   .   movzbl	1(%rax), %r13d
+[2,10]    .    .    .    .    .   D=====eeeeeE-R  .    .    .    .    .    .    .    .   .   movzbl	(%r10,%r13), %r10d
+[2,11]    .    .    .    .    .   DeE----------R  .    .    .    .    .    .    .    .   .   movzbl	%r9b, %r9d
+[2,12]    .    .    .    .    .    DeE---------R  .    .    .    .    .    .    .    .   .   shlq	$8, %r9
+[2,13]    .    .    .    .    .    D=eE--------R  .    .    .    .    .    .    .    .   .   addq	%r11, %r9
+[2,14]    .    .    .    .    .    DeeeeeE-----R  .    .    .    .    .    .    .    .   .   movzbl	2(%rax), %r13d
+[2,15]    .    .    .    .    .    D=====eeeeeER  .    .    .    .    .    .    .    .   .   movzbl	(%r9,%r13), %r9d
+[2,16]    .    .    .    .    .    .DeE--------R  .    .    .    .    .    .    .    .   .   movzbl	%r8b, %r8d
+[2,17]    .    .    .    .    .    .D=eE-------R  .    .    .    .    .    .    .    .   .   shlq	$8, %r8
+[2,18]    .    .    .    .    .    .D==eE------R  .    .    .    .    .    .    .    .   .   addq	%r11, %r8
+[2,19]    .    .    .    .    .    .DeeeeeE----R  .    .    .    .    .    .    .    .   .   movzbl	3(%rax), %r13d
+[2,20]    .    .    .    .    .    . D====eeeeeER .    .    .    .    .    .    .    .   .   movzbl	(%r8,%r13), %r8d
+[2,21]    .    .    .    .    .    . DeE--------R .    .    .    .    .    .    .    .   .   movzbl	%dil, %edi
+[2,22]    .    .    .    .    .    . D=eE-------R .    .    .    .    .    .    .    .   .   shlq	$8, %rdi
+[2,23]    .    .    .    .    .    . D==eE------R .    .    .    .    .    .    .    .   .   addq	%r11, %rdi
+[2,24]    .    .    .    .    .    .  DeeeeeE---R .    .    .    .    .    .    .    .   .   movzbl	4(%rax), %r13d
+[2,25]    .    .    .    .    .    .  D=====eeeeeER    .    .    .    .    .    .    .   .   movzbl	(%rdi,%r13), %edi
+[2,26]    .    .    .    .    .    .  D=eE--------R    .    .    .    .    .    .    .   .   movzbl	%sil, %esi
+[2,27]    .    .    .    .    .    .  D==eE-------R    .    .    .    .    .    .    .   .   shlq	$8, %rsi
+[2,28]    .    .    .    .    .    .   D==eE------R    .    .    .    .    .    .    .   .   addq	%r11, %rsi
+[2,29]    .    .    .    .    .    .   D=eeeeeE---R    .    .    .    .    .    .    .   .   movzbl	5(%rax), %r13d
+[2,30]    .    .    .    .    .    .   D======eeeeeER  .    .    .    .    .    .    .   .   movzbl	(%rsi,%r13), %esi
+[2,31]    .    .    .    .    .    .   D=eE---------R  .    .    .    .    .    .    .   .   movzbl	%cl, %ecx
+[2,32]    .    .    .    .    .    .    D=eE--------R  .    .    .    .    .    .    .   .   shlq	$8, %rcx
+[2,33]    .    .    .    .    .    .    D==eE-------R  .    .    .    .    .    .    .   .   addq	%r11, %rcx
+[2,34]    .    .    .    .    .    .    D=eeeeeE----R  .    .    .    .    .    .    .   .   movzbl	6(%rax), %r13d
+[2,35]    .    .    .    .    .    .    D======eeeeeER .    .    .    .    .    .    .   .   movzbl	(%rcx,%r13), %ecx
+[2,36]    .    .    .    .    .    .    .DeE---------R .    .    .    .    .    .    .   .   movzbl	%dl, %edx
+[2,37]    .    .    .    .    .    .    .D=eE--------R .    .    .    .    .    .    .   .   shlq	$8, %rdx
+[2,38]    .    .    .    .    .    .    .D==eE-------R .    .    .    .    .    .    .   .   addq	%r11, %rdx
+[2,39]    .    .    .    .    .    .    .D=eeeeeE----R .    .    .    .    .    .    .   .   movzbl	7(%rax), %r13d
+[2,40]    .    .    .    .    .    .    . D=====eeeeeER.    .    .    .    .    .    .   .   movzbl	(%rdx,%r13), %edx
+[2,41]    .    .    .    .    .    .    . DeE---------R.    .    .    .    .    .    .   .   addq	$8, %rax
+[2,42]    .    .    .    .    .    .    . D=eE--------R.    .    .    .    .    .    .   .   cmpq	%r12, %rax
+[2,43]    .    .    .    .    .    .    . D==eE-------R.    .    .    .    .    .    .   .   jne	.L171
+[3,0]     .    .    .    .    .    .    .  DeeeeeE----R.    .    .    .    .    .    .   .   movzbl	14(%rsp), %ebp
+[3,1]     .    .    .    .    .    .    .  D=====eE---R.    .    .    .    .    .    .   .   shlq	$8, %rbp
+[3,2]     .    .    .    .    .    .    .  D======eE--R.    .    .    .    .    .    .   .   addq	%r11, %rbp
+[3,3]     .    .    .    .    .    .    .  D=eeeeeE---R.    .    .    .    .    .    .   .   movzbl	(%rax), %r13d
+[3,4]     .    .    .    .    .    .    .   D======eeeeeER  .    .    .    .    .    .   .   movzbl	(%rbp,%r13), %ebp
+[3,5]     .    .    .    .    .    .    .   D===========eER .    .    .    .    .    .   .   movb	%bpl, 14(%rsp)
+[3,6]     .    .    .    .    .    .    .   DeE-----------R .    .    .    .    .    .   .   movzbl	%r10b, %r10d
+[3,7]     .    .    .    .    .    .    .   D=eE----------R .    .    .    .    .    .   .   shlq	$8, %r10
+[3,8]     .    .    .    .    .    .    .    D=eE---------R .    .    .    .    .    .   .   addq	%r11, %r10
+[3,9]     .    .    .    .    .    .    .    DeeeeeE------R .    .    .    .    .    .   .   movzbl	1(%rax), %r13d
+[3,10]    .    .    .    .    .    .    .    D=====eeeeeE-R .    .    .    .    .    .   .   movzbl	(%r10,%r13), %r10d
+[3,11]    .    .    .    .    .    .    .    DeE----------R .    .    .    .    .    .   .   movzbl	%r9b, %r9d
+[3,12]    .    .    .    .    .    .    .    .DeE---------R .    .    .    .    .    .   .   shlq	$8, %r9
+[3,13]    .    .    .    .    .    .    .    .D=eE--------R .    .    .    .    .    .   .   addq	%r11, %r9
+[3,14]    .    .    .    .    .    .    .    .DeeeeeE-----R .    .    .    .    .    .   .   movzbl	2(%rax), %r13d
+[3,15]    .    .    .    .    .    .    .    .D=====eeeeeER .    .    .    .    .    .   .   movzbl	(%r9,%r13), %r9d
+[3,16]    .    .    .    .    .    .    .    . DeE--------R .    .    .    .    .    .   .   movzbl	%r8b, %r8d
+[3,17]    .    .    .    .    .    .    .    . D=eE-------R .    .    .    .    .    .   .   shlq	$8, %r8
+[3,18]    .    .    .    .    .    .    .    . D==eE------R .    .    .    .    .    .   .   addq	%r11, %r8
+[3,19]    .    .    .    .    .    .    .    . DeeeeeE----R .    .    .    .    .    .   .   movzbl	3(%rax), %r13d
+[3,20]    .    .    .    .    .    .    .    .  D====eeeeeER.    .    .    .    .    .   .   movzbl	(%r8,%r13), %r8d
+[3,21]    .    .    .    .    .    .    .    .  DeE--------R.    .    .    .    .    .   .   movzbl	%dil, %edi
+[3,22]    .    .    .    .    .    .    .    .  D=eE-------R.    .    .    .    .    .   .   shlq	$8, %rdi
+[3,23]    .    .    .    .    .    .    .    .  D==eE------R.    .    .    .    .    .   .   addq	%r11, %rdi
+[3,24]    .    .    .    .    .    .    .    .   DeeeeeE---R.    .    .    .    .    .   .   movzbl	4(%rax), %r13d
+[3,25]    .    .    .    .    .    .    .    .   D=====eeeeeER   .    .    .    .    .   .   movzbl	(%rdi,%r13), %edi
+[3,26]    .    .    .    .    .    .    .    .   D=eE--------R   .    .    .    .    .   .   movzbl	%sil, %esi
+[3,27]    .    .    .    .    .    .    .    .   D==eE-------R   .    .    .    .    .   .   shlq	$8, %rsi
+[3,28]    .    .    .    .    .    .    .    .    D==eE------R   .    .    .    .    .   .   addq	%r11, %rsi
+[3,29]    .    .    .    .    .    .    .    .    D=eeeeeE---R   .    .    .    .    .   .   movzbl	5(%rax), %r13d
+[3,30]    .    .    .    .    .    .    .    .    D======eeeeeER .    .    .    .    .   .   movzbl	(%rsi,%r13), %esi
+[3,31]    .    .    .    .    .    .    .    .    D=eE---------R .    .    .    .    .   .   movzbl	%cl, %ecx
+[3,32]    .    .    .    .    .    .    .    .    .D=eE--------R .    .    .    .    .   .   shlq	$8, %rcx
+[3,33]    .    .    .    .    .    .    .    .    .D==eE-------R .    .    .    .    .   .   addq	%r11, %rcx
+[3,34]    .    .    .    .    .    .    .    .    .D=eeeeeE----R .    .    .    .    .   .   movzbl	6(%rax), %r13d
+[3,35]    .    .    .    .    .    .    .    .    .D======eeeeeER.    .    .    .    .   .   movzbl	(%rcx,%r13), %ecx
+[3,36]    .    .    .    .    .    .    .    .    . DeE---------R.    .    .    .    .   .   movzbl	%dl, %edx
+[3,37]    .    .    .    .    .    .    .    .    . D=eE--------R.    .    .    .    .   .   shlq	$8, %rdx
+[3,38]    .    .    .    .    .    .    .    .    . D==eE-------R.    .    .    .    .   .   addq	%r11, %rdx
+[3,39]    .    .    .    .    .    .    .    .    . D=eeeeeE----R.    .    .    .    .   .   movzbl	7(%rax), %r13d
+[3,40]    .    .    .    .    .    .    .    .    .  D=====eeeeeER    .    .    .    .   .   movzbl	(%rdx,%r13), %edx
+[3,41]    .    .    .    .    .    .    .    .    .  DeE---------R    .    .    .    .   .   addq	$8, %rax
+[3,42]    .    .    .    .    .    .    .    .    .  D=eE--------R    .    .    .    .   .   cmpq	%r12, %rax
+[3,43]    .    .    .    .    .    .    .    .    .  D==eE-------R    .    .    .    .   .   jne	.L171
+[4,0]     .    .    .    .    .    .    .    .    .   DeeeeeE----R    .    .    .    .   .   movzbl	14(%rsp), %ebp
+[4,1]     .    .    .    .    .    .    .    .    .   D=====eE---R    .    .    .    .   .   shlq	$8, %rbp
+[4,2]     .    .    .    .    .    .    .    .    .   D======eE--R    .    .    .    .   .   addq	%r11, %rbp
+[4,3]     .    .    .    .    .    .    .    .    .   D=eeeeeE---R    .    .    .    .   .   movzbl	(%rax), %r13d
+[4,4]     .    .    .    .    .    .    .    .    .    D======eeeeeER .    .    .    .   .   movzbl	(%rbp,%r13), %ebp
+[4,5]     .    .    .    .    .    .    .    .    .    D===========eER.    .    .    .   .   movb	%bpl, 14(%rsp)
+[4,6]     .    .    .    .    .    .    .    .    .    DeE-----------R.    .    .    .   .   movzbl	%r10b, %r10d
+[4,7]     .    .    .    .    .    .    .    .    .    D=eE----------R.    .    .    .   .   shlq	$8, %r10
+[4,8]     .    .    .    .    .    .    .    .    .    .D=eE---------R.    .    .    .   .   addq	%r11, %r10
+[4,9]     .    .    .    .    .    .    .    .    .    .DeeeeeE------R.    .    .    .   .   movzbl	1(%rax), %r13d
+[4,10]    .    .    .    .    .    .    .    .    .    .D=====eeeeeE-R.    .    .    .   .   movzbl	(%r10,%r13), %r10d
+[4,11]    .    .    .    .    .    .    .    .    .    .DeE----------R.    .    .    .   .   movzbl	%r9b, %r9d
+[4,12]    .    .    .    .    .    .    .    .    .    . DeE---------R.    .    .    .   .   shlq	$8, %r9
+[4,13]    .    .    .    .    .    .    .    .    .    . D=eE--------R.    .    .    .   .   addq	%r11, %r9
+[4,14]    .    .    .    .    .    .    .    .    .    . DeeeeeE-----R.    .    .    .   .   movzbl	2(%rax), %r13d
+[4,15]    .    .    .    .    .    .    .    .    .    . D=====eeeeeER.    .    .    .   .   movzbl	(%r9,%r13), %r9d
+[4,16]    .    .    .    .    .    .    .    .    .    .  DeE--------R.    .    .    .   .   movzbl	%r8b, %r8d
+[4,17]    .    .    .    .    .    .    .    .    .    .  D=eE-------R.    .    .    .   .   shlq	$8, %r8
+[4,18]    .    .    .    .    .    .    .    .    .    .  D==eE------R.    .    .    .   .   addq	%r11, %r8
+[4,19]    .    .    .    .    .    .    .    .    .    .  DeeeeeE----R.    .    .    .   .   movzbl	3(%rax), %r13d
+[4,20]    .    .    .    .    .    .    .    .    .    .   D====eeeeeER    .    .    .   .   movzbl	(%r8,%r13), %r8d
+[4,21]    .    .    .    .    .    .    .    .    .    .   DeE--------R    .    .    .   .   movzbl	%dil, %edi
+[4,22]    .    .    .    .    .    .    .    .    .    .   D=eE-------R    .    .    .   .   shlq	$8, %rdi
+[4,23]    .    .    .    .    .    .    .    .    .    .   D==eE------R    .    .    .   .   addq	%r11, %rdi
+[4,24]    .    .    .    .    .    .    .    .    .    .    DeeeeeE---R    .    .    .   .   movzbl	4(%rax), %r13d
+[4,25]    .    .    .    .    .    .    .    .    .    .    D=====eeeeeER  .    .    .   .   movzbl	(%rdi,%r13), %edi
+[4,26]    .    .    .    .    .    .    .    .    .    .    D=eE--------R  .    .    .   .   movzbl	%sil, %esi
+[4,27]    .    .    .    .    .    .    .    .    .    .    D==eE-------R  .    .    .   .   shlq	$8, %rsi
+[4,28]    .    .    .    .    .    .    .    .    .    .    .D==eE------R  .    .    .   .   addq	%r11, %rsi
+[4,29]    .    .    .    .    .    .    .    .    .    .    .D=eeeeeE---R  .    .    .   .   movzbl	5(%rax), %r13d
+[4,30]    .    .    .    .    .    .    .    .    .    .    .D======eeeeeER.    .    .   .   movzbl	(%rsi,%r13), %esi
+[4,31]    .    .    .    .    .    .    .    .    .    .    .D=eE---------R.    .    .   .   movzbl	%cl, %ecx
+[4,32]    .    .    .    .    .    .    .    .    .    .    . D=eE--------R.    .    .   .   shlq	$8, %rcx
+[4,33]    .    .    .    .    .    .    .    .    .    .    . D==eE-------R.    .    .   .   addq	%r11, %rcx
+[4,34]    .    .    .    .    .    .    .    .    .    .    . D=eeeeeE----R.    .    .   .   movzbl	6(%rax), %r13d
+[4,35]    .    .    .    .    .    .    .    .    .    .    . D======eeeeeER    .    .   .   movzbl	(%rcx,%r13), %ecx
+[4,36]    .    .    .    .    .    .    .    .    .    .    .  DeE---------R    .    .   .   movzbl	%dl, %edx
+[4,37]    .    .    .    .    .    .    .    .    .    .    .  D=eE--------R    .    .   .   shlq	$8, %rdx
+[4,38]    .    .    .    .    .    .    .    .    .    .    .  D==eE-------R    .    .   .   addq	%r11, %rdx
+[4,39]    .    .    .    .    .    .    .    .    .    .    .  D=eeeeeE----R    .    .   .   movzbl	7(%rax), %r13d
+[4,40]    .    .    .    .    .    .    .    .    .    .    .   D=====eeeeeER   .    .   .   movzbl	(%rdx,%r13), %edx
+[4,41]    .    .    .    .    .    .    .    .    .    .    .   DeE---------R   .    .   .   addq	$8, %rax
+[4,42]    .    .    .    .    .    .    .    .    .    .    .   D=eE--------R   .    .   .   cmpq	%r12, %rax
+[4,43]    .    .    .    .    .    .    .    .    .    .    .   D==eE-------R   .    .   .   jne	.L171
+[5,0]     .    .    .    .    .    .    .    .    .    .    .    DeeeeeE----R   .    .   .   movzbl	14(%rsp), %ebp
+[5,1]     .    .    .    .    .    .    .    .    .    .    .    D=====eE---R   .    .   .   shlq	$8, %rbp
+[5,2]     .    .    .    .    .    .    .    .    .    .    .    D======eE--R   .    .   .   addq	%r11, %rbp
+[5,3]     .    .    .    .    .    .    .    .    .    .    .    D=eeeeeE---R   .    .   .   movzbl	(%rax), %r13d
+[5,4]     .    .    .    .    .    .    .    .    .    .    .    .D======eeeeeER.    .   .   movzbl	(%rbp,%r13), %ebp
+[5,5]     .    .    .    .    .    .    .    .    .    .    .    .D===========eER    .   .   movb	%bpl, 14(%rsp)
+[5,6]     .    .    .    .    .    .    .    .    .    .    .    .DeE-----------R    .   .   movzbl	%r10b, %r10d
+[5,7]     .    .    .    .    .    .    .    .    .    .    .    .D=eE----------R    .   .   shlq	$8, %r10
+[5,8]     .    .    .    .    .    .    .    .    .    .    .    . D=eE---------R    .   .   addq	%r11, %r10
+[5,9]     .    .    .    .    .    .    .    .    .    .    .    . DeeeeeE------R    .   .   movzbl	1(%rax), %r13d
+[5,10]    .    .    .    .    .    .    .    .    .    .    .    . D=====eeeeeE-R    .   .   movzbl	(%r10,%r13), %r10d
+[5,11]    .    .    .    .    .    .    .    .    .    .    .    . DeE----------R    .   .   movzbl	%r9b, %r9d
+[5,12]    .    .    .    .    .    .    .    .    .    .    .    .  DeE---------R    .   .   shlq	$8, %r9
+[5,13]    .    .    .    .    .    .    .    .    .    .    .    .  D=eE--------R    .   .   addq	%r11, %r9
+[5,14]    .    .    .    .    .    .    .    .    .    .    .    .  DeeeeeE-----R    .   .   movzbl	2(%rax), %r13d
+[5,15]    .    .    .    .    .    .    .    .    .    .    .    .  D=====eeeeeER    .   .   movzbl	(%r9,%r13), %r9d
+[5,16]    .    .    .    .    .    .    .    .    .    .    .    .   DeE--------R    .   .   movzbl	%r8b, %r8d
+[5,17]    .    .    .    .    .    .    .    .    .    .    .    .   D=eE-------R    .   .   shlq	$8, %r8
+[5,18]    .    .    .    .    .    .    .    .    .    .    .    .   D==eE------R    .   .   addq	%r11, %r8
+[5,19]    .    .    .    .    .    .    .    .    .    .    .    .   DeeeeeE----R    .   .   movzbl	3(%rax), %r13d
+[5,20]    .    .    .    .    .    .    .    .    .    .    .    .    D====eeeeeER   .   .   movzbl	(%r8,%r13), %r8d
+[5,21]    .    .    .    .    .    .    .    .    .    .    .    .    DeE--------R   .   .   movzbl	%dil, %edi
+[5,22]    .    .    .    .    .    .    .    .    .    .    .    .    D=eE-------R   .   .   shlq	$8, %rdi
+[5,23]    .    .    .    .    .    .    .    .    .    .    .    .    D==eE------R   .   .   addq	%r11, %rdi
+[5,24]    .    .    .    .    .    .    .    .    .    .    .    .    .DeeeeeE---R   .   .   movzbl	4(%rax), %r13d
+[5,25]    .    .    .    .    .    .    .    .    .    .    .    .    .D=====eeeeeER .   .   movzbl	(%rdi,%r13), %edi
+[5,26]    .    .    .    .    .    .    .    .    .    .    .    .    .D=eE--------R .   .   movzbl	%sil, %esi
+[5,27]    .    .    .    .    .    .    .    .    .    .    .    .    .D==eE-------R .   .   shlq	$8, %rsi
+[5,28]    .    .    .    .    .    .    .    .    .    .    .    .    . D==eE------R .   .   addq	%r11, %rsi
+[5,29]    .    .    .    .    .    .    .    .    .    .    .    .    . D=eeeeeE---R .   .   movzbl	5(%rax), %r13d
+[5,30]    .    .    .    .    .    .    .    .    .    .    .    .    . D======eeeeeER   .   movzbl	(%rsi,%r13), %esi
+[5,31]    .    .    .    .    .    .    .    .    .    .    .    .    . D=eE---------R   .   movzbl	%cl, %ecx
+[5,32]    .    .    .    .    .    .    .    .    .    .    .    .    .  D=eE--------R   .   shlq	$8, %rcx
+[5,33]    .    .    .    .    .    .    .    .    .    .    .    .    .  D==eE-------R   .   addq	%r11, %rcx
+[5,34]    .    .    .    .    .    .    .    .    .    .    .    .    .  D=eeeeeE----R   .   movzbl	6(%rax), %r13d
+[5,35]    .    .    .    .    .    .    .    .    .    .    .    .    .  D======eeeeeER  .   movzbl	(%rcx,%r13), %ecx
+[5,36]    .    .    .    .    .    .    .    .    .    .    .    .    .   DeE---------R  .   movzbl	%dl, %edx
+[5,37]    .    .    .    .    .    .    .    .    .    .    .    .    .   D=eE--------R  .   shlq	$8, %rdx
+[5,38]    .    .    .    .    .    .    .    .    .    .    .    .    .   D==eE-------R  .   addq	%r11, %rdx
+[5,39]    .    .    .    .    .    .    .    .    .    .    .    .    .   D=eeeeeE----R  .   movzbl	7(%rax), %r13d
+[5,40]    .    .    .    .    .    .    .    .    .    .    .    .    .    D=====eeeeeER .   movzbl	(%rdx,%r13), %edx
+[5,41]    .    .    .    .    .    .    .    .    .    .    .    .    .    DeE---------R .   addq	$8, %rax
+[5,42]    .    .    .    .    .    .    .    .    .    .    .    .    .    D=eE--------R .   cmpq	%r12, %rax
+[5,43]    .    .    .    .    .    .    .    .    .    .    .    .    .    D==eE-------R .   jne	.L171
+[6,0]     .    .    .    .    .    .    .    .    .    .    .    .    .    .DeeeeeE----R .   movzbl	14(%rsp), %ebp
+[6,1]     .    .    .    .    .    .    .    .    .    .    .    .    .    .D=====eE---R .   shlq	$8, %rbp
+[6,2]     .    .    .    .    .    .    .    .    .    .    .    .    .    .D======eE--R .   addq	%r11, %rbp
+[6,3]     .    .    .    .    .    .    .    .    .    .    .    .    .    .D=eeeeeE---R .   movzbl	(%rax), %r13d
+
+
+Average Wait times (based on the timeline view):
+[0]: Executions
+[1]: Average time spent waiting in a scheduler's queue
+[2]: Average time spent waiting in a scheduler's queue while ready
+[3]: Average time elapsed from WB until retire stage
+
+      [0]    [1]    [2]    [3]
+0.     10    1.0    1.0    3.6       movzbl	14(%rsp), %ebp
+1.     10    6.0    0.0    2.7       shlq	$8, %rbp
+2.     10    7.0    0.0    1.8       addq	%r11, %rbp
+3.     10    1.9    1.0    2.9       movzbl	(%rax), %r13d
+4.     10    7.0    0.0    0.0       movzbl	(%rbp,%r13), %ebp
+5.     10    12.0   0.0    0.0       movb	%bpl, 14(%rsp)
+6.     10    1.0    0.1    11.0      movzbl	%r10b, %r10d
+7.     10    2.0    0.0    10.0      shlq	$8, %r10
+8.     10    2.0    0.0    9.0       addq	%r11, %r10
+9.     10    1.0    1.0    6.0       movzbl	1(%rax), %r13d
+10.    10    6.0    0.0    1.0       movzbl	(%r10,%r13), %r10d
+11.    10    1.0    0.1    10.0      movzbl	%r9b, %r9d
+12.    10    1.0    0.0    9.0       shlq	$8, %r9
+13.    10    2.0    0.0    8.0       addq	%r11, %r9
+14.    10    1.0    1.0    5.0       movzbl	2(%rax), %r13d
+15.    10    6.0    0.0    0.0       movzbl	(%r9,%r13), %r9d
+16.    10    1.0    1.0    8.0       movzbl	%r8b, %r8d
+17.    10    2.0    0.0    7.0       shlq	$8, %r8
+18.    10    3.0    0.0    6.0       addq	%r11, %r8
+19.    10    1.0    1.0    4.0       movzbl	3(%rax), %r13d
+20.    10    5.0    0.0    0.0       movzbl	(%r8,%r13), %r8d
+21.    10    1.0    0.1    8.0       movzbl	%dil, %edi
+22.    10    2.0    0.0    7.0       shlq	$8, %rdi
+23.    10    3.0    0.0    6.0       addq	%r11, %rdi
+24.    10    1.0    1.0    3.0       movzbl	4(%rax), %r13d
+25.    10    6.0    0.0    0.0       movzbl	(%rdi,%r13), %edi
+26.    10    1.9    0.1    8.1       movzbl	%sil, %esi
+27.    10    2.9    0.0    7.1       shlq	$8, %rsi
+28.    10    2.9    0.0    6.1       addq	%r11, %rsi
+29.    10    2.0    2.0    3.0       movzbl	5(%rax), %r13d
+30.    10    7.0    0.0    0.0       movzbl	(%rsi,%r13), %esi
+31.    10    1.9    0.1    9.1       movzbl	%cl, %ecx
+32.    10    1.9    0.0    8.1       shlq	$8, %rcx
+33.    10    2.9    0.0    7.1       addq	%r11, %rcx
+34.    10    2.0    2.0    4.0       movzbl	6(%rax), %r13d
+35.    10    7.0    0.0    0.0       movzbl	(%rcx,%r13), %ecx
+36.    10    1.0    0.1    9.0       movzbl	%dl, %edx
+37.    10    2.0    0.0    8.0       shlq	$8, %rdx
+38.    10    3.0    0.0    7.0       addq	%r11, %rdx
+39.    10    2.0    2.0    4.0       movzbl	7(%rax), %r13d
+40.    10    6.0    0.0    0.0       movzbl	(%rdx,%r13), %edx
+41.    10    1.0    1.0    9.0       addq	$8, %rax
+42.    10    2.0    0.0    8.0       cmpq	%r12, %rax
+43.    10    3.0    0.0    7.0       jne	.L171
+       10    3.1    0.3    5.3       <total>

@@ -1,4 +1,4 @@
-	.file	"6_3_2.cpp"
+	.file	"6_3_1.cpp"
 	.text
 	.section	.text._ZNSt11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZNSt11char_traitsIcE6lengthEPKc,comdat
 	.weak	_ZNSt11char_traitsIcE6lengthEPKc
@@ -1511,53 +1511,33 @@ main:
 	movb	$1, 14(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbx
-	movq	16(%rsp), %rsi
-	leaq	20000000(%rsi), %r9
-	movl	$1, %edx
-	movl	$1, %ecx
+	movq	16(%rsp), %rcx
+	leaq	20000000(%rcx), %r8
 	movl	$1, %eax
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-# LLVM-MCA-BEGIN mainloop2
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rsi
 .L171:
-	movzbl	14(%rsp), %r8d
-	salq	$8, %r8
-	addq	%rdi, %r8
-	movzbl	(%rsi), %r10d
-	movzbl	(%r8,%r10), %r8d
-	movb	%r8b, 14(%rsp)
-	movzbl	%cl, %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	1(%rsi), %r10d
-	movzbl	(%rcx,%r10), %ecx
-	movzbl	%dl, %edx
+# LLVM-MCA-BEGIN mainloop1
+	movzbl	14(%rsp), %edx
 	salq	$8, %rdx
-	addq	%rdi, %rdx
-	movzbl	2(%rsi), %r10d
-	movzbl	(%rdx,%r10), %edx
+	addq	%rsi, %rdx
+	movzbl	(%rcx), %edi
+	movzbl	(%rdx,%rdi), %edx
+	movb	%dl, 14(%rsp)
 	movzbl	%al, %eax
 	salq	$8, %rax
-	addq	%rdi, %rax
-	movzbl	3(%rsi), %r10d
-	movzbl	(%rax,%r10), %eax
-	addq	$4, %rsi
-	cmpq	%r9, %rsi
+	addq	%rsi, %rax
+	movzbl	1(%rcx), %edi
+	movzbl	(%rax,%rdi), %eax
+	addq	$2, %rcx
+	cmpq	%r8, %rcx
 	jne	.L171
-# LLVM-MCA-END mainloop2
-	movzbl	%r8b, %r8d
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-	salq	$8, %r8
-	leaq	(%rdi,%r8), %rsi
-	movzbl	%cl, %ecx
-	movzbl	(%rsi,%rcx), %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
+# LLVM-MCA-END mainloop1
 	movzbl	%dl, %edx
-	movzbl	(%rcx,%rdx), %edx
 	salq	$8, %rdx
-	addq	%rdx, %rdi
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rcx
+	addq	%rcx, %rdx
 	movzbl	%al, %eax
-	movzbl	(%rdi,%rax), %eax
+	movzbl	(%rdx,%rax), %eax
 	movb	%al, 14(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbp

@@ -1,0 +1,177 @@
+
+[0] Code Region - mainloop0
+
+Iterations:        200
+Instructions:      1800
+Total Cycles:      463
+Total uOps:        1800
+
+Dispatch Width:    4
+uOps Per Cycle:    3.89
+IPC:               3.89
+Block RThroughput: 2.3
+
+
+Instruction Info:
+[1]: #uOps
+[2]: Latency
+[3]: RThroughput
+[4]: MayLoad
+[5]: MayStore
+[6]: HasSideEffects (U)
+
+[1]    [2]    [3]    [4]    [5]    [6]    Instructions:
+ 1      5     0.50    *                   movzbl	14(%rsp), %eax
+ 1      1     0.50                        shlq	$8, %rax
+ 1      1     0.25                        addq	%rsi, %rax
+ 1      5     0.50    *                   movzbl	(%rdx), %ecx
+ 1      5     0.50    *                   movzbl	(%rax,%rcx), %eax
+ 1      1     1.00           *            movb	%al, 14(%rsp)
+ 1      1     0.25                        addq	$1, %rdx
+ 1      1     0.25                        cmpq	%rdi, %rdx
+ 1      1     0.50                        jne	.L171
+
+
+Resources:
+[0]   - BWDivider
+[1]   - BWFPDivider
+[2]   - BWPort0
+[3]   - BWPort1
+[4]   - BWPort2
+[5]   - BWPort3
+[6]   - BWPort4
+[7]   - BWPort5
+[8]   - BWPort6
+[9]   - BWPort7
+
+
+Resource pressure per iteration:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    
+ -      -     1.25   1.25   1.50   1.51   1.00   1.25   1.25   1.00   
+
+Resource pressure by instruction:
+[0]    [1]    [2]    [3]    [4]    [5]    [6]    [7]    [8]    [9]    Instructions:
+ -      -      -      -     0.25   0.76    -      -      -      -     movzbl	14(%rsp), %eax
+ -      -     0.75    -      -      -      -      -     0.25    -     shlq	$8, %rax
+ -      -      -     0.25    -      -      -     0.50   0.25    -     addq	%rsi, %rax
+ -      -      -      -     0.51   0.50    -      -      -      -     movzbl	(%rdx), %ecx
+ -      -      -      -     0.75   0.25    -      -      -      -     movzbl	(%rax,%rcx), %eax
+ -      -      -      -      -     0.01   1.00    -      -     1.00   movb	%al, 14(%rsp)
+ -      -      -     0.50    -      -      -     0.50   0.01    -     addq	$1, %rdx
+ -      -      -     0.50    -      -      -     0.26   0.25    -     cmpq	%rdi, %rdx
+ -      -     0.50    -      -      -      -      -     0.50    -     jne	.L171
+
+
+Timeline view:
+                    0123456789          012345
+Index     0123456789          0123456789      
+
+[0,0]     DeeeeeER  .    .    .    .    .    .   movzbl	14(%rsp), %eax
+[0,1]     D=====eER .    .    .    .    .    .   shlq	$8, %rax
+[0,2]     D======eER.    .    .    .    .    .   addq	%rsi, %rax
+[0,3]     DeeeeeE--R.    .    .    .    .    .   movzbl	(%rdx), %ecx
+[0,4]     .D======eeeeeER.    .    .    .    .   movzbl	(%rax,%rcx), %eax
+[0,5]     .D===========eER    .    .    .    .   movb	%al, 14(%rsp)
+[0,6]     .DeE-----------R    .    .    .    .   addq	$1, %rdx
+[0,7]     .D=eE----------R    .    .    .    .   cmpq	%rdi, %rdx
+[0,8]     . D=eE---------R    .    .    .    .   jne	.L171
+[1,0]     . DeeeeeE------R    .    .    .    .   movzbl	14(%rsp), %eax
+[1,1]     . D=====eE-----R    .    .    .    .   shlq	$8, %rax
+[1,2]     . D======eE----R    .    .    .    .   addq	%rsi, %rax
+[1,3]     .  DeeeeeE-----R    .    .    .    .   movzbl	(%rdx), %ecx
+[1,4]     .  D======eeeeeER   .    .    .    .   movzbl	(%rax,%rcx), %eax
+[1,5]     .  D===========eER  .    .    .    .   movb	%al, 14(%rsp)
+[1,6]     .  DeE-----------R  .    .    .    .   addq	$1, %rdx
+[1,7]     .   DeE----------R  .    .    .    .   cmpq	%rdi, %rdx
+[1,8]     .   D=eE---------R  .    .    .    .   jne	.L171
+[2,0]     .   DeeeeeE------R  .    .    .    .   movzbl	14(%rsp), %eax
+[2,1]     .   D=====eE-----R  .    .    .    .   shlq	$8, %rax
+[2,2]     .    D=====eE----R  .    .    .    .   addq	%rsi, %rax
+[2,3]     .    DeeeeeE-----R  .    .    .    .   movzbl	(%rdx), %ecx
+[2,4]     .    D======eeeeeER .    .    .    .   movzbl	(%rax,%rcx), %eax
+[2,5]     .    D===========eER.    .    .    .   movb	%al, 14(%rsp)
+[2,6]     .    .DeE----------R.    .    .    .   addq	$1, %rdx
+[2,7]     .    .D=eE---------R.    .    .    .   cmpq	%rdi, %rdx
+[2,8]     .    .D==eE--------R.    .    .    .   jne	.L171
+[3,0]     .    .DeeeeeE------R.    .    .    .   movzbl	14(%rsp), %eax
+[3,1]     .    . D====eE-----R.    .    .    .   shlq	$8, %rax
+[3,2]     .    . D=====eE----R.    .    .    .   addq	%rsi, %rax
+[3,3]     .    . DeeeeeE-----R.    .    .    .   movzbl	(%rdx), %ecx
+[3,4]     .    . D======eeeeeER    .    .    .   movzbl	(%rax,%rcx), %eax
+[3,5]     .    .  D==========eER   .    .    .   movb	%al, 14(%rsp)
+[3,6]     .    .  DeE----------R   .    .    .   addq	$1, %rdx
+[3,7]     .    .  D=eE---------R   .    .    .   cmpq	%rdi, %rdx
+[3,8]     .    .  D==eE--------R   .    .    .   jne	.L171
+[4,0]     .    .   DeeeeeE-----R   .    .    .   movzbl	14(%rsp), %eax
+[4,1]     .    .   D=====eE----R   .    .    .   shlq	$8, %rax
+[4,2]     .    .   D======eE---R   .    .    .   addq	%rsi, %rax
+[4,3]     .    .   D=eeeeeE----R   .    .    .   movzbl	(%rdx), %ecx
+[4,4]     .    .    D======eeeeeER .    .    .   movzbl	(%rax,%rcx), %eax
+[4,5]     .    .    D===========eER.    .    .   movb	%al, 14(%rsp)
+[4,6]     .    .    DeE-----------R.    .    .   addq	$1, %rdx
+[4,7]     .    .    D=eE----------R.    .    .   cmpq	%rdi, %rdx
+[4,8]     .    .    .D=eE---------R.    .    .   jne	.L171
+[5,0]     .    .    .DeeeeeE------R.    .    .   movzbl	14(%rsp), %eax
+[5,1]     .    .    .D=====eE-----R.    .    .   shlq	$8, %rax
+[5,2]     .    .    .D======eE----R.    .    .   addq	%rsi, %rax
+[5,3]     .    .    . DeeeeeE-----R.    .    .   movzbl	(%rdx), %ecx
+[5,4]     .    .    . D======eeeeeER    .    .   movzbl	(%rax,%rcx), %eax
+[5,5]     .    .    . D===========eER   .    .   movb	%al, 14(%rsp)
+[5,6]     .    .    . DeE-----------R   .    .   addq	$1, %rdx
+[5,7]     .    .    .  DeE----------R   .    .   cmpq	%rdi, %rdx
+[5,8]     .    .    .  D=eE---------R   .    .   jne	.L171
+[6,0]     .    .    .  DeeeeeE------R   .    .   movzbl	14(%rsp), %eax
+[6,1]     .    .    .  D=====eE-----R   .    .   shlq	$8, %rax
+[6,2]     .    .    .   D=====eE----R   .    .   addq	%rsi, %rax
+[6,3]     .    .    .   DeeeeeE-----R   .    .   movzbl	(%rdx), %ecx
+[6,4]     .    .    .   D======eeeeeER  .    .   movzbl	(%rax,%rcx), %eax
+[6,5]     .    .    .   D===========eER .    .   movb	%al, 14(%rsp)
+[6,6]     .    .    .    DeE----------R .    .   addq	$1, %rdx
+[6,7]     .    .    .    D=eE---------R .    .   cmpq	%rdi, %rdx
+[6,8]     .    .    .    D==eE--------R .    .   jne	.L171
+[7,0]     .    .    .    DeeeeeE------R .    .   movzbl	14(%rsp), %eax
+[7,1]     .    .    .    .D====eE-----R .    .   shlq	$8, %rax
+[7,2]     .    .    .    .D=====eE----R .    .   addq	%rsi, %rax
+[7,3]     .    .    .    .DeeeeeE-----R .    .   movzbl	(%rdx), %ecx
+[7,4]     .    .    .    .D======eeeeeER.    .   movzbl	(%rax,%rcx), %eax
+[7,5]     .    .    .    . D==========eER    .   movb	%al, 14(%rsp)
+[7,6]     .    .    .    . DeE----------R    .   addq	$1, %rdx
+[7,7]     .    .    .    . D=eE---------R    .   cmpq	%rdi, %rdx
+[7,8]     .    .    .    . D==eE--------R    .   jne	.L171
+[8,0]     .    .    .    .  DeeeeeE-----R    .   movzbl	14(%rsp), %eax
+[8,1]     .    .    .    .  D=====eE----R    .   shlq	$8, %rax
+[8,2]     .    .    .    .  D======eE---R    .   addq	%rsi, %rax
+[8,3]     .    .    .    .  D=eeeeeE----R    .   movzbl	(%rdx), %ecx
+[8,4]     .    .    .    .   D======eeeeeER  .   movzbl	(%rax,%rcx), %eax
+[8,5]     .    .    .    .   D===========eER .   movb	%al, 14(%rsp)
+[8,6]     .    .    .    .   DeE-----------R .   addq	$1, %rdx
+[8,7]     .    .    .    .   D=eE----------R .   cmpq	%rdi, %rdx
+[8,8]     .    .    .    .    D=eE---------R .   jne	.L171
+[9,0]     .    .    .    .    DeeeeeE------R .   movzbl	14(%rsp), %eax
+[9,1]     .    .    .    .    D=====eE-----R .   shlq	$8, %rax
+[9,2]     .    .    .    .    D======eE----R .   addq	%rsi, %rax
+[9,3]     .    .    .    .    .DeeeeeE-----R .   movzbl	(%rdx), %ecx
+[9,4]     .    .    .    .    .D======eeeeeER.   movzbl	(%rax,%rcx), %eax
+[9,5]     .    .    .    .    .D===========eER   movb	%al, 14(%rsp)
+[9,6]     .    .    .    .    .DeE-----------R   addq	$1, %rdx
+[9,7]     .    .    .    .    . DeE----------R   cmpq	%rdi, %rdx
+[9,8]     .    .    .    .    . D=eE---------R   jne	.L171
+
+
+Average Wait times (based on the timeline view):
+[0]: Executions
+[1]: Average time spent waiting in a scheduler's queue
+[2]: Average time spent waiting in a scheduler's queue while ready
+[3]: Average time elapsed from WB until retire stage
+
+      [0]    [1]    [2]    [3]
+0.     10    1.0    1.0    5.2       movzbl	14(%rsp), %eax
+1.     10    5.8    0.0    4.3       shlq	$8, %rax
+2.     10    6.6    0.0    3.4       addq	%rsi, %rax
+3.     10    1.2    0.8    4.5       movzbl	(%rdx), %ecx
+4.     10    7.0    0.0    0.0       movzbl	(%rax,%rcx), %eax
+5.     10    11.8   0.0    0.0       movb	%al, 14(%rsp)
+6.     10    1.0    1.0    10.6      addq	$1, %rdx
+7.     10    1.7    0.0    9.6       cmpq	%rdi, %rdx
+8.     10    2.4    0.0    8.6       jne	.L171
+       10    4.3    0.3    5.1       <total>

@@ -1,4 +1,4 @@
-	.file	"6_3_2.cpp"
+	.file	"6_3_3.cpp"
 	.text
 	.section	.text._ZNSt11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZNSt11char_traitsIcE6lengthEPKc,comdat
 	.weak	_ZNSt11char_traitsIcE6lengthEPKc
@@ -1469,14 +1469,20 @@ main:
 	.cfi_startproc
 	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
 	.cfi_lsda 0x1b,.LLSDA3977
-	pushq	%rbp
+	pushq	%r13
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	pushq	%rbx
+	.cfi_offset 13, -16
+	pushq	%r12
 	.cfi_def_cfa_offset 24
-	.cfi_offset 3, -24
+	.cfi_offset 12, -24
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
 	subq	$56, %rsp
-	.cfi_def_cfa_offset 80
+	.cfi_def_cfa_offset 96
 	leaq	16(%rsp), %rdi
 	movl	$20000000, %esi
 .LEHB20:
@@ -1511,53 +1517,93 @@ main:
 	movb	$1, 14(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbx
-	movq	16(%rsp), %rsi
-	leaq	20000000(%rsi), %r9
-	movl	$1, %edx
+	movq	16(%rsp), %rax
+	leaq	20000000(%rax), %r12
+	movl	$1, %esi
+	movl	$1, %edi
 	movl	$1, %ecx
-	movl	$1, %eax
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-# LLVM-MCA-BEGIN mainloop2
+	movl	$1, %r9d
+	movl	$1, %r10d
+	movl	$1, %edx
+	movl	$1, %r8d
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %r11
+# LLVM-MCA-BEGIN mainloop3
 .L171:
-	movzbl	14(%rsp), %r8d
-	salq	$8, %r8
-	addq	%rdi, %r8
-	movzbl	(%rsi), %r10d
-	movzbl	(%r8,%r10), %r8d
-	movb	%r8b, 14(%rsp)
-	movzbl	%cl, %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	1(%rsi), %r10d
-	movzbl	(%rcx,%r10), %ecx
-	movzbl	%dl, %edx
-	salq	$8, %rdx
-	addq	%rdi, %rdx
-	movzbl	2(%rsi), %r10d
-	movzbl	(%rdx,%r10), %edx
-	movzbl	%al, %eax
-	salq	$8, %rax
-	addq	%rdi, %rax
-	movzbl	3(%rsi), %r10d
-	movzbl	(%rax,%r10), %eax
-	addq	$4, %rsi
-	cmpq	%r9, %rsi
-	jne	.L171
-# LLVM-MCA-END mainloop2
+	movzbl	14(%rsp), %ebp
+	salq	$8, %rbp
+	addq	%r11, %rbp
+	movzbl	(%rax), %r13d
+	movzbl	0(%rbp,%r13), %ebp
+	movb	%bpl, 14(%rsp)
+	movzbl	%r10b, %r10d
+	salq	$8, %r10
+	addq	%r11, %r10
+	movzbl	1(%rax), %r13d
+	movzbl	(%r10,%r13), %r10d
+	movzbl	%r9b, %r9d
+	salq	$8, %r9
+	addq	%r11, %r9
+	movzbl	2(%rax), %r13d
+	movzbl	(%r9,%r13), %r9d
 	movzbl	%r8b, %r8d
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
 	salq	$8, %r8
-	leaq	(%rdi,%r8), %rsi
+	addq	%r11, %r8
+	movzbl	3(%rax), %r13d
+	movzbl	(%r8,%r13), %r8d
+	movzbl	%dil, %edi
+	salq	$8, %rdi
+	addq	%r11, %rdi
+	movzbl	4(%rax), %r13d
+	movzbl	(%rdi,%r13), %edi
+	movzbl	%sil, %esi
+	salq	$8, %rsi
+	addq	%r11, %rsi
+	movzbl	5(%rax), %r13d
+	movzbl	(%rsi,%r13), %esi
 	movzbl	%cl, %ecx
-	movzbl	(%rsi,%rcx), %ecx
 	salq	$8, %rcx
-	addq	%rdi, %rcx
+	addq	%r11, %rcx
+	movzbl	6(%rax), %r13d
+	movzbl	(%rcx,%r13), %ecx
 	movzbl	%dl, %edx
-	movzbl	(%rcx,%rdx), %edx
 	salq	$8, %rdx
-	addq	%rdx, %rdi
-	movzbl	%al, %eax
-	movzbl	(%rdi,%rax), %eax
+	addq	%r11, %rdx
+	movzbl	7(%rax), %r13d
+	movzbl	(%rdx,%r13), %edx
+	addq	$8, %rax
+	cmpq	%r12, %rax
+	jne	.L171
+# LLVM-MCA-END mainloop3
+	movzbl	%bpl, %ebp
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %r11
+	salq	$8, %rbp
+	leaq	(%r11,%rbp), %rax
+	movzbl	%r10b, %r10d
+	movzbl	(%rax,%r10), %eax
+	salq	$8, %rax
+	addq	%r11, %rax
+	movzbl	%r9b, %r9d
+	movzbl	(%rax,%r9), %eax
+	salq	$8, %rax
+	addq	%r11, %rax
+	movzbl	%r8b, %r8d
+	movzbl	(%rax,%r8), %eax
+	salq	$8, %rax
+	addq	%r11, %rax
+	movzbl	%dil, %edi
+	movzbl	(%rax,%rdi), %eax
+	salq	$8, %rax
+	addq	%r11, %rax
+	movzbl	%sil, %esi
+	movzbl	(%rax,%rsi), %eax
+	salq	$8, %rax
+	addq	%r11, %rax
+	movzbl	%cl, %ecx
+	movzbl	(%rax,%rcx), %eax
+	salq	$8, %rax
+	addq	%rax, %r11
+	movzbl	%dl, %edx
+	movzbl	(%r11,%rdx), %eax
 	movb	%al, 14(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbp
@@ -1601,10 +1647,14 @@ main:
 	movl	$0, %eax
 	addq	$56, %rsp
 	.cfi_remember_state
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 40
 	popq	%rbx
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 32
 	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
 	.cfi_def_cfa_offset 8
 	ret
 .L175:

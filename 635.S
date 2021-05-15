@@ -1,4 +1,4 @@
-	.file	"6_3_2.cpp"
+	.file	"6_3_5.cpp"
 	.text
 	.section	.text._ZNSt11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZNSt11char_traitsIcE6lengthEPKc,comdat
 	.weak	_ZNSt11char_traitsIcE6lengthEPKc
@@ -1469,30 +1469,42 @@ main:
 	.cfi_startproc
 	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
 	.cfi_lsda 0x1b,.LLSDA3977
-	pushq	%rbp
+	pushq	%r15
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	pushq	%rbx
+	.cfi_offset 15, -16
+	pushq	%r14
 	.cfi_def_cfa_offset 24
-	.cfi_offset 3, -24
-	subq	$56, %rsp
-	.cfi_def_cfa_offset 80
-	leaq	16(%rsp), %rdi
+	.cfi_offset 14, -24
+	pushq	%r13
+	.cfi_def_cfa_offset 32
+	.cfi_offset 13, -32
+	pushq	%r12
+	.cfi_def_cfa_offset 40
+	.cfi_offset 12, -40
+	pushq	%rbp
+	.cfi_def_cfa_offset 48
+	.cfi_offset 6, -48
+	pushq	%rbx
+	.cfi_def_cfa_offset 56
+	.cfi_offset 3, -56
+	subq	$104, %rsp
+	.cfi_def_cfa_offset 160
+	leaq	64(%rsp), %rdi
 	movl	$20000000, %esi
 .LEHB20:
 	call	_Z15makeRandomPairsi
 .LEHE20:
-	movb	$1, 15(%rsp)
-	movq	16(%rsp), %rdx
+	movb	$1, 63(%rsp)
+	movq	64(%rsp), %rdx
 	leaq	20000000(%rdx), %rdi
 	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rsi
 .L170:
-	movzbl	15(%rsp), %eax
+	movzbl	63(%rsp), %eax
 	salq	$8, %rax
 	addq	%rsi, %rax
 	movzbl	(%rdx), %ecx
 	movzbl	(%rax,%rcx), %eax
-	movb	%al, 15(%rsp)
+	movb	%al, 63(%rsp)
 	addq	$1, %rdx
 	cmpq	%rdi, %rdx
 	jne	.L170
@@ -1503,79 +1515,381 @@ main:
 	leaq	_ZSt4cout(%rip), %rdi
 .LEHB21:
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
-	leaq	15(%rsp), %rdi
+	leaq	63(%rsp), %rdi
 	leaq	_ZSt4cout(%rip), %rsi
 	call	_ZNK7GF2Five3GF2ILi285EE5printERSo
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@PLT
+	movb	$1, 62(%rsp)
+	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
+	movq	%rax, 40(%rsp)
+	movq	64(%rsp), %rax
+	leaq	20000000(%rax), %rbx
+	movq	%rbx, 32(%rsp)
+	movb	$1, 11(%rsp)
+	movb	$1, 31(%rsp)
+	movb	$1, 30(%rsp)
+	movb	$1, 29(%rsp)
+	movb	$1, 28(%rsp)
+	movb	$1, 27(%rsp)
+	movb	$1, 26(%rsp)
+	movb	$1, 25(%rsp)
+	movb	$1, 24(%rsp)
+	movb	$1, 23(%rsp)
+	movb	$1, 22(%rsp)
+	movb	$1, 21(%rsp)
+	movb	$1, 20(%rsp)
+	movb	$1, 19(%rsp)
+	movl	$1, %esi
+	movl	$1, %r10d
+	movl	$1, %r11d
+	movb	$1, 18(%rsp)
+	movl	$1, %r9d
+	movl	$1, %ebp
+	movl	$1, %r12d
+	movb	$1, 17(%rsp)
+	movb	$1, 16(%rsp)
+	movb	$1, 15(%rsp)
 	movb	$1, 14(%rsp)
+	movb	$1, 13(%rsp)
+	movb	$1, 12(%rsp)
+	movl	$1, %ecx
+	movl	$1, %edi
+	movl	$1, %r8d
+	movl	$1, %ebx
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdx
+# LLVM-MCA-BEGIN mainloop5
+.L171:
+	movzbl	62(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	(%rax), %r14d
+	movzbl	0(%r13,%r14), %r14d
+	movb	%r14b, 62(%rsp)
+	movzbl	%r12b, %r12d
+	salq	$8, %r12
+	addq	%rdx, %r12
+	movzbl	1(%rax), %r13d
+	movzbl	(%r12,%r13), %r12d
+	movzbl	%bpl, %ebp
+	salq	$8, %rbp
+	addq	%rdx, %rbp
+	movzbl	2(%rax), %r13d
+	movzbl	0(%rbp,%r13), %ebp
+	movzbl	%bl, %ebx
+	salq	$8, %rbx
+	addq	%rdx, %rbx
+	movzbl	3(%rax), %r13d
+	movzbl	(%rbx,%r13), %ebx
+	movzbl	%r11b, %r11d
+	salq	$8, %r11
+	addq	%rdx, %r11
+	movzbl	4(%rax), %r13d
+	movzbl	(%r11,%r13), %r11d
+	movzbl	%r10b, %r10d
+	salq	$8, %r10
+	addq	%rdx, %r10
+	movzbl	5(%rax), %r13d
+	movzbl	(%r10,%r13), %r10d
+	movzbl	%r9b, %r9d
+	salq	$8, %r9
+	addq	%rdx, %r9
+	movzbl	6(%rax), %r13d
+	movzbl	(%r9,%r13), %r9d
+	movzbl	%r8b, %r8d
+	salq	$8, %r8
+	addq	%rdx, %r8
+	movzbl	7(%rax), %r13d
+	movzbl	(%r8,%r13), %r8d
+	movzbl	%dil, %edi
+	salq	$8, %rdi
+	addq	%rdx, %rdi
+	movzbl	8(%rax), %r13d
+	movzbl	(%rdi,%r13), %edi
+	movzbl	%sil, %esi
+	salq	$8, %rsi
+	addq	%rdx, %rsi
+	movzbl	9(%rax), %r13d
+	movzbl	(%rsi,%r13), %esi
+	movzbl	18(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	10(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 18(%rsp)
+	movzbl	%cl, %ecx
+	salq	$8, %rcx
+	addq	%rdx, %rcx
+	movzbl	11(%rax), %r13d
+	movzbl	(%rcx,%r13), %ecx
+	movzbl	19(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	12(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 19(%rsp)
+	movzbl	20(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	13(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 20(%rsp)
+	movzbl	12(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	14(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 12(%rsp)
+	movzbl	21(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	15(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 21(%rsp)
+	movzbl	22(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	16(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 22(%rsp)
+	movzbl	13(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	17(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 13(%rsp)
+	movzbl	23(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	18(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 23(%rsp)
+	movzbl	24(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	19(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 24(%rsp)
+	movzbl	14(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	20(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 14(%rsp)
+	movzbl	25(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	21(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 25(%rsp)
+	movzbl	26(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	22(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 26(%rsp)
+	movzbl	15(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	23(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 15(%rsp)
+	movzbl	27(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	24(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 27(%rsp)
+	movzbl	28(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	25(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 28(%rsp)
+	movzbl	16(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	26(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 16(%rsp)
+	movzbl	29(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	27(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 29(%rsp)
+	movzbl	30(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	28(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 30(%rsp)
+	movzbl	17(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	29(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 17(%rsp)
+	movzbl	31(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	30(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 31(%rsp)
+	movzbl	11(%rsp), %r13d
+	salq	$8, %r13
+	addq	%rdx, %r13
+	movzbl	31(%rax), %r15d
+	movzbl	0(%r13,%r15), %r15d
+	movb	%r15b, 11(%rsp)
+	addq	$32, %rax
+	cmpq	32(%rsp), %rax
+# LLVM-MCA-END mainloop5
+	jne	.L171
+	movzbl	%r14b, %r14d
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %r15
+	salq	$8, %r14
+	addq	%r15, %r14
+	movzbl	%r12b, %r12d
+	movzbl	(%r14,%r12), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%bpl, %ebp
+	movzbl	(%rax,%rbp), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%bl, %ebx
+	movzbl	(%rax,%rbx), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%r11b, %r11d
+	movzbl	(%rax,%r11), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%r10b, %r10d
+	movzbl	(%rax,%r10), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%r9b, %r9d
+	movzbl	(%rax,%r9), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%r8b, %r8d
+	movzbl	(%rax,%r8), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%dil, %edi
+	movzbl	(%rax,%rdi), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%sil, %esi
+	movzbl	(%rax,%rsi), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	18(%rsp), %edx
+	movzbl	(%rax,%rdx), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	%cl, %ecx
+	movzbl	(%rax,%rcx), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	19(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	20(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	12(%rsp), %edx
+	movzbl	(%rax,%rdx), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	21(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	22(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	13(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	23(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	24(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	14(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	25(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	26(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	15(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	27(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	28(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	16(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	29(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	30(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	17(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%r15, %rax
+	movzbl	31(%rsp), %r13d
+	movzbl	(%rax,%r13), %eax
+	salq	$8, %rax
+	addq	%rax, %r15
+	movzbl	11(%rsp), %r13d
+	movzbl	(%r15,%r13), %eax
+	movb	%al, 62(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbx
-	movq	16(%rsp), %rsi
-	leaq	20000000(%rsi), %r9
-	movl	$1, %edx
-	movl	$1, %ecx
-	movl	$1, %eax
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-# LLVM-MCA-BEGIN mainloop2
-.L171:
-	movzbl	14(%rsp), %r8d
-	salq	$8, %r8
-	addq	%rdi, %r8
-	movzbl	(%rsi), %r10d
-	movzbl	(%r8,%r10), %r8d
-	movb	%r8b, 14(%rsp)
-	movzbl	%cl, %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	1(%rsi), %r10d
-	movzbl	(%rcx,%r10), %ecx
-	movzbl	%dl, %edx
-	salq	$8, %rdx
-	addq	%rdi, %rdx
-	movzbl	2(%rsi), %r10d
-	movzbl	(%rdx,%r10), %edx
-	movzbl	%al, %eax
-	salq	$8, %rax
-	addq	%rdi, %rax
-	movzbl	3(%rsi), %r10d
-	movzbl	(%rax,%r10), %eax
-	addq	$4, %rsi
-	cmpq	%r9, %rsi
-	jne	.L171
-# LLVM-MCA-END mainloop2
-	movzbl	%r8b, %r8d
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-	salq	$8, %r8
-	leaq	(%rdi,%r8), %rsi
-	movzbl	%cl, %ecx
-	movzbl	(%rsi,%rcx), %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	%dl, %edx
-	movzbl	(%rcx,%rdx), %edx
-	salq	$8, %rdx
-	addq	%rdx, %rdi
-	movzbl	%al, %eax
-	movzbl	(%rdi,%rax), %eax
-	movb	%al, 14(%rsp)
-	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
-	movq	%rax, %rbp
 	leaq	.LC5(%rip), %rdi
 	call	_ZNSt11char_traitsIcE6lengthEPKc
 	movq	%rax, %rdx
 	leaq	.LC5(%rip), %rsi
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l@PLT
-	leaq	14(%rsp), %rdi
+	leaq	62(%rsp), %rdi
 	leaq	_ZSt4cout(%rip), %rsi
 	call	_ZNK7GF2Five3GF2ILi285EE5printERSo
 	leaq	_ZSt4cout(%rip), %rdi
 	call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@PLT
-	movq	%rbp, %rcx
-	subq	%rbx, %rcx
+	subq	40(%rsp), %rbx
+	movq	%rbx, %rcx
 	movabsq	$2361183241434822607, %rdx
-	movq	%rcx, %rax
+	movq	%rbx, %rax
 	imulq	%rdx
 	sarq	$7, %rdx
 	sarq	$63, %rcx
@@ -1593,24 +1907,32 @@ main:
 	movq	%rbx, %rdi
 	call	_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_@PLT
 .LEHE21:
-	movq	16(%rsp), %rdi
+	movq	64(%rsp), %rdi
 	testq	%rdi, %rdi
 	je	.L176
 	call	_ZdlPv@PLT
 .L176:
 	movl	$0, %eax
-	addq	$56, %rsp
+	addq	$104, %rsp
 	.cfi_remember_state
-	.cfi_def_cfa_offset 24
+	.cfi_def_cfa_offset 56
 	popq	%rbx
-	.cfi_def_cfa_offset 16
+	.cfi_def_cfa_offset 48
 	popq	%rbp
+	.cfi_def_cfa_offset 40
+	popq	%r12
+	.cfi_def_cfa_offset 32
+	popq	%r13
+	.cfi_def_cfa_offset 24
+	popq	%r14
+	.cfi_def_cfa_offset 16
+	popq	%r15
 	.cfi_def_cfa_offset 8
 	ret
 .L175:
 	.cfi_restore_state
 	movq	%rax, %rbx
-	movq	16(%rsp), %rdi
+	movq	64(%rsp), %rdi
 	testq	%rdi, %rdi
 	je	.L174
 	call	_ZdlPv@PLT

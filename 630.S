@@ -1,4 +1,4 @@
-	.file	"6_3_2.cpp"
+	.file	"6_3_0.cpp"
 	.text
 	.section	.text._ZNSt11char_traitsIcE6lengthEPKc,"axG",@progbits,_ZNSt11char_traitsIcE6lengthEPKc,comdat
 	.weak	_ZNSt11char_traitsIcE6lengthEPKc
@@ -21,7 +21,7 @@ _ZNSt11char_traitsIcE6lengthEPKc:
 	.weak	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm
 	.type	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm, @function
 _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm:
-.LFB4504:
+.LFB4503:
 	.cfi_startproc
 	movl	%esi, %eax
 	movq	%rax, (%rdi)
@@ -49,14 +49,14 @@ _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm429496
 	movq	$624, 4992(%rdi)
 	ret
 	.cfi_endproc
-.LFE4504:
+.LFE4503:
 	.size	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm, .-_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EE4seedEm
 	.section	.text._ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv,"axG",@progbits,_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv,comdat
 	.align 2
 	.weak	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv
 	.type	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv, @function
 _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv:
-.LFB4630:
+.LFB4629:
 	.cfi_startproc
 	cmpq	$623, 4992(%rdi)
 	ja	.L17
@@ -136,14 +136,14 @@ _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm429496
 	movq	$0, 4992(%rdi)
 	jmp	.L6
 	.cfi_endproc
-.LFE4630:
+.LFE4629:
 	.size	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv, .-_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv
 	.section	.text._ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE,"axG",@progbits,_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE,comdat
 	.align 2
 	.weak	_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE
 	.type	_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE, @function
 _ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE:
-.LFB4508:
+.LFB4507:
 	.cfi_startproc
 	pushq	%r15
 	.cfi_def_cfa_offset 16
@@ -236,7 +236,7 @@ _ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm3
 	call	_ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv
 	jmp	.L21
 	.cfi_endproc
-.LFE4508:
+.LFE4507:
 	.size	_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE, .-_ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEiRT_RKNS0_10param_typeE
 	.section	.rodata._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm.str1.1,"aMS",@progbits,1
 .LC0:
@@ -246,7 +246,7 @@ _ZNSt24uniform_int_distributionIiEclISt23mersenne_twister_engineImLm32ELm624ELm3
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
 	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm, @function
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm:
-.LFB4791:
+.LFB4790:
 	.cfi_startproc
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
@@ -275,7 +275,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm:
 	leaq	.LC0(%rip), %rdi
 	call	_ZSt20__throw_length_errorPKc@PLT
 	.cfi_endproc
-.LFE4791:
+.LFE4790:
 	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm, .-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm
 	.section	.rodata._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag.str1.8,"aMS",@progbits,1
 	.align 8
@@ -286,7 +286,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERmm:
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
 	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag, @function
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag:
-.LFB4675:
+.LFB4674:
 	.cfi_startproc
 	pushq	%r12
 	.cfi_def_cfa_offset 16
@@ -354,7 +354,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_S
 	je	.L39
 	jmp	.L37
 	.cfi_endproc
-.LFE4675:
+.LFE4674:
 	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag, .-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC2:
@@ -727,7 +727,7 @@ _Z15makeRandomPairsi:
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm
 	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm, @function
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm:
-.LFB4709:
+.LFB4708:
 	.cfi_startproc
 	pushq	%r15
 	.cfi_def_cfa_offset 16
@@ -844,7 +844,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm:
 	movb	%al, (%rdi)
 	jmp	.L91
 	.cfi_endproc
-.LFE4709:
+.LFE4708:
 	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm, .-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm
 	.section	.rodata._ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm.str1.1,"aMS",@progbits,1
 .LC3:
@@ -854,7 +854,7 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm:
 	.weak	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm
 	.type	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm, @function
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm:
-.LFB4710:
+.LFB4709:
 	.cfi_startproc
 	pushq	%r15
 	.cfi_def_cfa_offset 16
@@ -1078,17 +1078,17 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE4710:
+.LFE4709:
 	.size	_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm, .-_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm
 	.section	.text._ZNK7GF2Five3GF2ILi285EE5printERSo,"axG",@progbits,_ZNK7GF2Five3GF2ILi285EE5printERSo,comdat
 	.align 2
 	.weak	_ZNK7GF2Five3GF2ILi285EE5printERSo
 	.type	_ZNK7GF2Five3GF2ILi285EE5printERSo, @function
 _ZNK7GF2Five3GF2ILi285EE5printERSo:
-.LFB4538:
+.LFB4537:
 	.cfi_startproc
 	.cfi_personality 0x9b,DW.ref.__gxx_personality_v0
-	.cfi_lsda 0x1b,.LLSDA4538
+	.cfi_lsda 0x1b,.LLSDA4537
 	pushq	%r15
 	.cfi_def_cfa_offset 16
 	.cfi_offset 15, -16
@@ -1404,51 +1404,51 @@ _ZNK7GF2Five3GF2ILi285EE5printERSo:
 	movq	%rax, %rbx
 	jmp	.L150
 	.cfi_endproc
-.LFE4538:
+.LFE4537:
 	.section	.gcc_except_table
-.LLSDA4538:
+.LLSDA4537:
 	.byte	0xff
 	.byte	0xff
 	.byte	0x1
-	.uleb128 .LLSDACSE4538-.LLSDACSB4538
-.LLSDACSB4538:
-	.uleb128 .LEHB11-.LFB4538
+	.uleb128 .LLSDACSE4537-.LLSDACSB4537
+.LLSDACSB4537:
+	.uleb128 .LEHB11-.LFB4537
 	.uleb128 .LEHE11-.LEHB11
-	.uleb128 .L160-.LFB4538
+	.uleb128 .L160-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB12-.LFB4538
+	.uleb128 .LEHB12-.LFB4537
 	.uleb128 .LEHE12-.LEHB12
-	.uleb128 .L158-.LFB4538
+	.uleb128 .L158-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB13-.LFB4538
+	.uleb128 .LEHB13-.LFB4537
 	.uleb128 .LEHE13-.LEHB13
-	.uleb128 .L157-.LFB4538
+	.uleb128 .L157-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB14-.LFB4538
+	.uleb128 .LEHB14-.LFB4537
 	.uleb128 .LEHE14-.LEHB14
 	.uleb128 0
 	.uleb128 0
-	.uleb128 .LEHB15-.LFB4538
+	.uleb128 .LEHB15-.LFB4537
 	.uleb128 .LEHE15-.LEHB15
-	.uleb128 .L155-.LFB4538
+	.uleb128 .L155-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB16-.LFB4538
+	.uleb128 .LEHB16-.LFB4537
 	.uleb128 .LEHE16-.LEHB16
-	.uleb128 .L159-.LFB4538
+	.uleb128 .L159-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB17-.LFB4538
+	.uleb128 .LEHB17-.LFB4537
 	.uleb128 .LEHE17-.LEHB17
-	.uleb128 .L156-.LFB4538
+	.uleb128 .L156-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB18-.LFB4538
+	.uleb128 .LEHB18-.LFB4537
 	.uleb128 .LEHE18-.LEHB18
-	.uleb128 .L159-.LFB4538
+	.uleb128 .L159-.LFB4537
 	.uleb128 0
-	.uleb128 .LEHB19-.LFB4538
+	.uleb128 .LEHB19-.LFB4537
 	.uleb128 .LEHE19-.LEHB19
 	.uleb128 0
 	.uleb128 0
-.LLSDACSE4538:
+.LLSDACSE4537:
 	.section	.text._ZNK7GF2Five3GF2ILi285EE5printERSo,"axG",@progbits,_ZNK7GF2Five3GF2ILi285EE5printERSo,comdat
 	.size	_ZNK7GF2Five3GF2ILi285EE5printERSo, .-_ZNK7GF2Five3GF2ILi285EE5printERSo
 	.section	.rodata.str1.8,"aMS",@progbits,1
@@ -1511,54 +1511,21 @@ main:
 	movb	$1, 14(%rsp)
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbx
-	movq	16(%rsp), %rsi
-	leaq	20000000(%rsi), %r9
-	movl	$1, %edx
-	movl	$1, %ecx
-	movl	$1, %eax
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-# LLVM-MCA-BEGIN mainloop2
+	movq	16(%rsp), %rdx
+	leaq	20000000(%rdx), %rdi
+	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rsi
+# LLVM-MCA-BEGIN mainloop0
 .L171:
-	movzbl	14(%rsp), %r8d
-	salq	$8, %r8
-	addq	%rdi, %r8
-	movzbl	(%rsi), %r10d
-	movzbl	(%r8,%r10), %r8d
-	movb	%r8b, 14(%rsp)
-	movzbl	%cl, %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	1(%rsi), %r10d
-	movzbl	(%rcx,%r10), %ecx
-	movzbl	%dl, %edx
-	salq	$8, %rdx
-	addq	%rdi, %rdx
-	movzbl	2(%rsi), %r10d
-	movzbl	(%rdx,%r10), %edx
-	movzbl	%al, %eax
+	movzbl	14(%rsp), %eax
 	salq	$8, %rax
-	addq	%rdi, %rax
-	movzbl	3(%rsi), %r10d
-	movzbl	(%rax,%r10), %eax
-	addq	$4, %rsi
-	cmpq	%r9, %rsi
-	jne	.L171
-# LLVM-MCA-END mainloop2
-	movzbl	%r8b, %r8d
-	leaq	_ZN7GF2Five3GF2ILi285EE9gf_tablesE(%rip), %rdi
-	salq	$8, %r8
-	leaq	(%rdi,%r8), %rsi
-	movzbl	%cl, %ecx
-	movzbl	(%rsi,%rcx), %ecx
-	salq	$8, %rcx
-	addq	%rdi, %rcx
-	movzbl	%dl, %edx
-	movzbl	(%rcx,%rdx), %edx
-	salq	$8, %rdx
-	addq	%rdx, %rdi
-	movzbl	%al, %eax
-	movzbl	(%rdi,%rax), %eax
+	addq	%rsi, %rax
+	movzbl	(%rdx), %ecx
+	movzbl	(%rax,%rcx), %eax
 	movb	%al, 14(%rsp)
+	addq	$1, %rdx
+	cmpq	%rdi, %rdx
+	jne	.L171
+# LLVM-MCA-END mainloop0
 	call	_ZNSt6chrono3_V212system_clock3nowEv@PLT
 	movq	%rax, %rbp
 	leaq	.LC5(%rip), %rdi
@@ -1645,7 +1612,7 @@ main:
 	.size	main, .-main
 	.type	_GLOBAL__sub_I__Z14makeRandomIntsi, @function
 _GLOBAL__sub_I__Z14makeRandomIntsi:
-.LFB4929:
+.LFB4928:
 	.cfi_startproc
 	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
@@ -1659,7 +1626,7 @@ _GLOBAL__sub_I__Z14makeRandomIntsi:
 	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE4929:
+.LFE4928:
 	.size	_GLOBAL__sub_I__Z14makeRandomIntsi, .-_GLOBAL__sub_I__Z14makeRandomIntsi
 	.section	.init_array,"aw"
 	.align 8
